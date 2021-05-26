@@ -4162,7 +4162,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-32218
+  m_Name: pb_Mesh27832
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4557,7 +4557,9 @@ MonoBehaviour:
     RegisteredScenes:
     - Testing
     AllowRuntimeSceneChanges: 0
-    NetworkPrefabs: []
+    NetworkPrefabs:
+    - Prefab: {fileID: 763017402152863781, guid: 679c69e113fb9f345ba1ee6413b10883, type: 3}
+      PlayerPrefab: 1
     PlayerPrefabHash:
       id: 0
     CreatePlayerPrefab: 1
@@ -4586,7 +4588,9 @@ MonoBehaviour:
   references:
     version: 1
     00000000:
-      type: {class: , ns: , asm: }
+      type: {class: NullableBoolSerializable, ns: MLAPI.Configuration, asm: Unity.Multiplayer.MLAPI.Runtime}
+      data:
+        Value: 1897319656204293034
 --- !u!4 &1511229374
 Transform:
   m_ObjectHideFlags: 0
