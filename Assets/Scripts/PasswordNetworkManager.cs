@@ -29,8 +29,6 @@ public class PasswordNetworkManager : MonoBehaviour
         NetworkManager.Singleton.OnClientDisconnectCallback -= HandleClientDisconnected;
     }
 
-
-
     public void Host()
     {
         NetworkManager.Singleton.ConnectionApprovalCallback += ApprovalCheck;
