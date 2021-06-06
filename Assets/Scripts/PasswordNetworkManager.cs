@@ -10,7 +10,7 @@ public class PasswordNetworkManager : MonoBehaviour
 {
     [SerializeField] private TMP_InputField passwordInputField;
     [SerializeField] private GameObject passwordEntryUI;
-    [SerializeField] private GameObject leaveButton;
+   // [SerializeField] private GameObject leaveButton;
 
     private void Start()
     {
@@ -54,7 +54,7 @@ public class PasswordNetworkManager : MonoBehaviour
         }
 
         passwordEntryUI.SetActive(true);
-        leaveButton.SetActive(false);
+        //leaveButton.SetActive(false);
     }
     
     private void ApprovalCheck(byte[] connectionData, ulong clientID, NetworkManager.ConnectionApprovedDelegate callback)
@@ -89,7 +89,7 @@ public class PasswordNetworkManager : MonoBehaviour
         if(clientID == NetworkManager.Singleton.LocalClientId)
         {
             passwordEntryUI.SetActive(false);
-            leaveButton.SetActive(true);
+            //leaveButton.SetActive(true);
         }
     }    
     
@@ -98,7 +98,7 @@ public class PasswordNetworkManager : MonoBehaviour
         if (clientID == NetworkManager.Singleton.LocalClientId)
         {
             passwordEntryUI.SetActive(true);
-            leaveButton.SetActive(false);
+            //leaveButton.SetActive(false);
         }
     }
 }
