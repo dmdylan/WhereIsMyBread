@@ -66,12 +66,6 @@ public class PasswordNetworkManager : MonoBehaviour
         Vector3 spawnPos = Vector3.zero;
         Quaternion spawnRot = Quaternion.identity;
 
-        //switch (NetworkManager.Singleton.ConnectedClients.Count)
-        //{
-        //    case 1:
-        //        S
-        //}
-
         //null for playerprefabhash means default player prefab in network manager
         callback(true, null, approveConnection, spawnPos, spawnRot);
     }
