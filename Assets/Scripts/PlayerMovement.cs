@@ -13,6 +13,7 @@ public class PlayerMovement : NetworkBehaviour
 
     [Header("Movement")]
     [SerializeField] private float moveSpeedMultiplier = 1f;
+    [SerializeField] private float turnSmoothing = 5f;
     private bool isMovementPressed;
     Vector3 currentMovement;
 
@@ -55,7 +56,7 @@ public class PlayerMovement : NetworkBehaviour
     void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-        playerBody.AddRelativeForce(currentMovement * moveSpeedMultiplier, ForceMode.VelocityChange);
+        playerBody.AddForce(currentMovement * moveSpeedMultiplier, ForceMode.VelocityChange);
         HandleRotation();
         ControlPlayerDrag();
     }    
@@ -64,8 +65,10 @@ public class PlayerMovement : NetworkBehaviour
     {
         currentMovementInput = context.ReadValue<Vector2>();
         Debug.Log(currentMovementInput);
-        currentMovement.x = currentMovementInput.x;
-        currentMovement.z = currentMovementInput.y;
+        Vector3 newDirection = new Vector3(currentMovementInput.x, 0, currentMovementInput.y);
+        currentMovement = Camera.main.transform.TransformDirection(newDirection);
+        //currentMovement.x = currentMovementInput.x;
+        //currentMovement.z = currentMovementInput.y;
         isMovementPressed = currentMovementInput.x != 0 || currentMovementInput.y != 0;
     }
 
@@ -80,16 +83,18 @@ public class PlayerMovement : NetworkBehaviour
 
     private void HandleRotation()
     {
-        Vector3 positionToLookAt;
+        Vector3 positionToLookAt = new Vector3(currentMovement.x, 0, currentMovement.z);
 
-        positionToLookAt.x = currentMovement.x;
+        positionToLookAt = Camera.main.transform.TransformDirection(positionToLookAt);
         positionToLookAt.y = 0.0f;
-        positionToLookAt.z = currentMovement.z;
 
         if (isMovementPressed)
         {
             Quaternion targetRotation = Quaternion.LookRotation(positionToLookAt);
-            playerBody.MoveRotation(targetRotation);
+
+            Quaternion newRotation = Quaternion.Lerp(playerBody.rotation, targetRotation, turnSmoothing * Time.deltaTime);
+
+            playerBody.MoveRotation(newRotation);
         }
     }
 
