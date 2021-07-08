@@ -337,9 +337,9 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+"Assets/Project/Runtime/Input/PlayerControls.cs"
 "Assets/Project/Runtime/Scripts/ActivateOnKeypress.cs"
 "Assets/Project/Runtime/Scripts/CharacterMovement.cs"
-"Assets/Project/Runtime/Scripts/PlayerControls.cs"
 "Assets/Project/Runtime/Scripts/PlayerMovement.cs"
 -langversion:8.0
 
