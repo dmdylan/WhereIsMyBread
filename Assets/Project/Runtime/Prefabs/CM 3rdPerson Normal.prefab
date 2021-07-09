@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8033089083071178221}
   - component: {fileID: 8033089083071178217}
   - component: {fileID: 8033089083071178216}
-  - component: {fileID: 8033089083071178223}
   - component: {fileID: 8033089083071178222}
   m_Layer: 0
   m_Name: cm
@@ -64,18 +63,18 @@ MonoBehaviour:
   m_LookaheadIgnoreY: 0
   m_XDamping: 0.2
   m_YDamping: 0.2
-  m_ZDamping: 1
+  m_ZDamping: 0
   m_TargetMovementOnly: 1
-  m_ScreenX: 0.33440018
-  m_ScreenY: 0.3129505
-  m_CameraDistance: 2.22
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
+  m_CameraDistance: 5
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
   m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.3672515
-  m_SoftZoneHeight: 0.4778598
-  m_BiasX: -0.00000008114962
+  m_SoftZoneWidth: 0.5
+  m_SoftZoneHeight: 0.5
+  m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 0
   m_GroupFramingMode: 2
@@ -89,23 +88,6 @@ MonoBehaviour:
   m_MaximumFOV: 60
   m_MinimumOrthoSize: 1
   m_MaximumOrthoSize: 5000
---- !u!114 &8033089083071178223
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8033089083071178220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_NoiseProfile: {fileID: 11400000, guid: 46965f9cbaf525742a6da4c2172a99cd, type: 2}
-  m_PivotOffset: {x: 0, y: 0, z: 0}
-  m_AmplitudeGain: 1
-  m_FrequencyGain: 1
-  mNoiseOffsets: {x: -765.3436, y: 412.4553, z: 513.0689}
 --- !u!114 &8033089083071178222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,14 +175,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8033089083492652230}
-  m_LocalRotation: {x: 0.32326594, y: 0, z: 0, w: 0.94630814}
+  m_LocalRotation: {x: 0.3232651, y: 0, z: 0, w: 0.9463085}
   m_LocalPosition: {x: 19.475887, y: 3.819136, z: -3.0409548}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8033089083071178221}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 37.721, y: 0, z: 0}
 --- !u!114 &8033089083492652224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,7 +212,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.7780429, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 1
