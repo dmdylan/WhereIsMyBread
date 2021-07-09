@@ -340,6 +340,7 @@
 "Assets/Project/Runtime/Input/PlayerControls.cs"
 "Assets/Project/Runtime/Scripts/ActivateOnKeypress.cs"
 "Assets/Project/Runtime/Scripts/CharacterMovement.cs"
+"Assets/Project/Runtime/Scripts/PlayerLocomotion.cs"
 "Assets/Project/Runtime/Scripts/PlayerMovement.cs"
 -langversion:8.0
 
