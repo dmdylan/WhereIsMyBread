@@ -80,7 +80,11 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3716426839125238743}
+<<<<<<< Updated upstream
   m_Enabled: 0
+=======
+  m_Enabled: 1
+>>>>>>> Stashed changes
   m_Avatar: {fileID: 9000000, guid: 9d5ec73bb676f4746babf11f32871d6f, type: 3}
   m_Controller: {fileID: 9100000, guid: d1aee245f02de3f478f0311fcdb30dfb, type: 2}
   m_CullingMode: 0
@@ -160,7 +164,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3716426839125238743}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f6f3bf89aa97405989c802ba270f815, type: 3}
   m_Name: 
