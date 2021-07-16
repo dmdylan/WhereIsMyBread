@@ -14,8 +14,6 @@ public class PlayerLocomotion : NetworkBehaviour
     [SerializeField] private float m_Speed = 5f;
     [SerializeField] private float jumpForce = 5f;
     [SerializeField] private float rotationSpeed = 5f;
-
-    private Animator animator;
     private PlayerInput playerInput;
     private InputAction movementAction;
     private InputAction jumpAction;
@@ -48,7 +46,6 @@ public class PlayerLocomotion : NetworkBehaviour
         playerBody = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
         playerCamera = Camera.main;
-        animator = GetComponent<Animator>();
     }
 
     void Start()
@@ -62,17 +59,13 @@ public class PlayerLocomotion : NetworkBehaviour
     }
 
     //TODO: Pretty sure it jitters when jumping because currentMovement.y is set to 0 each frame
-    //Need to read and cache before jumping? Also jitters moving diagnol.
-    //TODO: Jumping from idle doesn't play animation correctly
+    //Need to read and cache before jumping
     private void Update()
     {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         currentMovement = new Vector3(currentMovementInput.x, 0, currentMovementInput.y);
         currentMovement = currentMovement.x * playerCamera.transform.right.normalized + currentMovement.z * playerCamera.transform.forward.normalized;
         currentMovement.y = 0;
-        animator.SetFloat("XInput", currentMovementInput.x);
-        animator.SetFloat("YInput", currentMovementInput.y);
-        animator.SetBool("isJumping", !isGrounded);
     }
 
     void FixedUpdate()
