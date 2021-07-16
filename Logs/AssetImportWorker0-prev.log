@@ -15,19 +15,11 @@ Z:/Unity Projects/WhereIsMyBread
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-<<<<<<< Updated upstream
-62168
+58915
 Successfully changed project path to: Z:/Unity Projects/WhereIsMyBread
 Z:/Unity Projects/WhereIsMyBread
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 160.42 ms, found 1 plugins.
-=======
-53742
-Successfully changed project path to: Z:/Unity Projects/WhereIsMyBread
-Z:/Unity Projects/WhereIsMyBread
-Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 157.31 ms, found 1 plugins.
->>>>>>> Stashed changes
+Refreshing native plugins compatible for Editor in 270.99 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.1.4f1 (4cd64a618c1b)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/2021.1.4f1/Editor/Data/Resources/UnitySubsystems
@@ -43,526 +35,154 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/2021.1.4f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/2021.1.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/2021.1.4f1/Editor/Data/MonoBleedingEdge/etc'
-<<<<<<< Updated upstream
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56508
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56292
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/2021.1.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003488 seconds.
+Registered in 0.004872 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 155.03 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 179.86 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.931 seconds
+- Completed reload, in  2.321 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006785 seconds.
+Registered in 0.007378 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 163.18 ms, found 1 plugins.
+Refreshing native plugins compatible for Editor in 185.61 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Find all reader and writers took 126 milliseconds
+Find all reader and writers took 148 milliseconds
 Script Module: UnityEngine.UI.dll
-Weave behaviours and messages took97 milliseconds
-Find all reader and writers took 103 milliseconds
+Weave behaviours and messages took115 milliseconds
+Find all reader and writers took 118 milliseconds
 Script Module: Unity.RenderPipelines.Core.Runtime.dll
-Weave behaviours and messages took73 milliseconds
-Find all reader and writers took 107 milliseconds
+Weave behaviours and messages took84 milliseconds
+Find all reader and writers took 127 milliseconds
 Script Module: UnityEngine.TestRunner.dll
-Weave behaviours and messages took39 milliseconds
-Find all reader and writers took 99 milliseconds
+Weave behaviours and messages took41 milliseconds
+Find all reader and writers took 113 milliseconds
 Script Module: Unity.Mathematics.dll
-Weave behaviours and messages took232 milliseconds
-Find all reader and writers took 108 milliseconds
+Weave behaviours and messages took273 milliseconds
+Find all reader and writers took 141 milliseconds
 Script Module: Unity.InputSystem.dll
-Weave behaviours and messages took211 milliseconds
-Find all reader and writers took 89 milliseconds
-Script Module: SimpleWebTransport.dll
-Weave behaviours and messages took7 milliseconds
+Weave behaviours and messages took279 milliseconds
 Find all reader and writers took 102 milliseconds
+Script Module: SimpleWebTransport.dll
+Weave behaviours and messages took10 milliseconds
+Find all reader and writers took 117 milliseconds
 Script Module: Unity.VisualScripting.State.dll
 Weave behaviours and messages took5 milliseconds
-Find all reader and writers took 109 milliseconds
+Find all reader and writers took 138 milliseconds
 Script Module: Unity.VisualScripting.Core.dll
-Weave behaviours and messages took178 milliseconds
-Find all reader and writers took 123 milliseconds
+Weave behaviours and messages took217 milliseconds
+Find all reader and writers took 198 milliseconds
 Script Module: Unity.RenderPipelines.Universal.Runtime.dll
-Weave behaviours and messages took90 milliseconds
-Find all reader and writers took 100 milliseconds
+Weave behaviours and messages took111 milliseconds
+Find all reader and writers took 115 milliseconds
 Script Module: Unity.VisualScripting.Flow.dll
-Weave behaviours and messages took99 milliseconds
-Find all reader and writers took 121 milliseconds
+Weave behaviours and messages took126 milliseconds
+Find all reader and writers took 136 milliseconds
 Script Module: Unity.TextMeshPro.dll
-Weave behaviours and messages took91 milliseconds
-Find all reader and writers took 92 milliseconds
+Weave behaviours and messages took106 milliseconds
+Find all reader and writers took 108 milliseconds
 Script Module: Unity.ProBuilder.Poly2Tri.dll
-Weave behaviours and messages took15 milliseconds
-Find all reader and writers took 98 milliseconds
+Weave behaviours and messages took8 milliseconds
+Find all reader and writers took 130 milliseconds
 Script Module: Cinemachine.dll
-Weave behaviours and messages took65 milliseconds
-Find all reader and writers took 103 milliseconds
+Weave behaviours and messages took87 milliseconds
+Find all reader and writers took 116 milliseconds
 Script Module: Unity.Timeline.dll
-Weave behaviours and messages took34 milliseconds
-Find all reader and writers took 119 milliseconds
+Weave behaviours and messages took36 milliseconds
+Find all reader and writers took 142 milliseconds
 Script Module: Unity.ProBuilder.dll
-Weave behaviours and messages took92 milliseconds
-Find all reader and writers took 102 milliseconds
+Weave behaviours and messages took111 milliseconds
+Find all reader and writers took 120 milliseconds
 Script Module: Telepathy.dll
-Weave behaviours and messages took2 milliseconds
-Find all reader and writers took 91 milliseconds
+Weave behaviours and messages took3 milliseconds
+Find all reader and writers took 113 milliseconds
 Script Module: Unity.ProBuilder.Csg.dll
-Weave behaviours and messages took2 milliseconds
-Find all reader and writers took 99 milliseconds
+Weave behaviours and messages took3 milliseconds
+Find all reader and writers took 109 milliseconds
 Script Module: kcp2k.dll
-Weave behaviours and messages took4 milliseconds
-Find all reader and writers took 96 milliseconds
+Weave behaviours and messages took5 milliseconds
+Find all reader and writers took 105 milliseconds
 Script Module: Unity.RenderPipeline.Universal.ShaderLibrary.dll
 Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 103 milliseconds
+Find all reader and writers took 117 milliseconds
 Script Module: Project.External.dll
-Weave behaviours and messages took20 milliseconds
-Find all reader and writers took 93 milliseconds
+Weave behaviours and messages took25 milliseconds
+Find all reader and writers took 111 milliseconds
 Script Module: Unity.ProBuilder.KdTree.dll
-Weave behaviours and messages took4 milliseconds
-Find all reader and writers took 97 milliseconds
+Weave behaviours and messages took6 milliseconds
+Find all reader and writers took 111 milliseconds
 Script Module: Unity.RenderPipelines.Core.ShaderLibrary.dll
 Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 92 milliseconds
+Find all reader and writers took 107 milliseconds
 Script Module: Unity.ProBuilder.Stl.dll
 Weave behaviours and messages took1 milliseconds
-Find all reader and writers took 96 milliseconds
+Find all reader and writers took 111 milliseconds
 Script Module: Unity.RenderPipelines.Universal.Shaders.dll
 Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 95 milliseconds
+Find all reader and writers took 112 milliseconds
 Script Module: Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
 Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 121 milliseconds
+Find all reader and writers took 154 milliseconds
 Script Module: com.unity.cinemachine.editor.dll
-Weave behaviours and messages took54 milliseconds
-Find all reader and writers took 123 milliseconds
+Weave behaviours and messages took60 milliseconds
+Find all reader and writers took 134 milliseconds
 Script Module: VSSettingsProvider.dll
 Weave behaviours and messages took1 milliseconds
-Find all reader and writers took 120 milliseconds
+Find all reader and writers took 146 milliseconds
 Script Module: UnityEditor.TestRunner.dll
-Weave behaviours and messages took46 milliseconds
-Find all reader and writers took 125 milliseconds
+Weave behaviours and messages took54 milliseconds
+Find all reader and writers took 135 milliseconds
 Script Module: ParrelSync.dll
-Weave behaviours and messages took5 milliseconds
-Find all reader and writers took 118 milliseconds
+Weave behaviours and messages took3 milliseconds
+Find all reader and writers took 148 milliseconds
 Script Module: Unity.ProBuilder.AssetIdRemapUtility.dll
-Weave behaviours and messages took4 milliseconds
-Find all reader and writers took 95 milliseconds
+Weave behaviours and messages took5 milliseconds
+Find all reader and writers took 116 milliseconds
 Script Module: Mirror.CompilerSymbols.dll
 Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 117 milliseconds
+Find all reader and writers took 131 milliseconds
 Script Module: UnityEditor.UI.dll
 Weave behaviours and messages took19 milliseconds
-Find all reader and writers took 94 milliseconds
+Find all reader and writers took 108 milliseconds
 Script Module: Unity.ShaderGraph.Utilities.dll
 Weave behaviours and messages took0 milliseconds
 Mono: successfully reloaded assembly
-- Completed reload, in 13.167 seconds
+- Completed reload, in 15.741 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
 Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 1.05 ms, found 1 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 1.12 ms, found 1 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4994 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 196.8 MB.
-System memory in use after: 194.2 MB.
+Unloading 5007 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 199.1 MB.
+System memory in use after: 196.6 MB.
 
-Unloading 196 unused Assets to reduce memory usage. Loaded Objects now: 5392.
-Total: 6.026300 ms (FindLiveObjects: 0.403400 ms CreateObjectMapping: 0.242400 ms MarkObjects: 3.634800 ms  DeleteObjects: 1.744000 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/Project/Runtime/Animation/Animations/running.fbx
-  artifactKey: Guid(bf12f0cdecdc3e743ad9da31f0796ba5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/running.fbx using Guid(bf12f0cdecdc3e743ad9da31f0796ba5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fbb223d973660408c325faa8eec36afc') in 0.147547 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2129.010634 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/jump.fbx
-  artifactKey: Guid(3cf89466186526f4aa81fa32344fb13d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/jump.fbx using Guid(3cf89466186526f4aa81fa32344fb13d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7eabd25cfd4fd332f4cc2d68b24f873a') in 0.021521 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.322780 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/left strafe.fbx
-  artifactKey: Guid(32b5d25ca1e4b59409e8b2501bad712d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/left strafe.fbx using Guid(32b5d25ca1e4b59409e8b2501bad712d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b080fd13731e6004d84de9597b0a68bf') in 0.021268 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.708742 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/right strafe.fbx
-  artifactKey: Guid(3db5c6792256221499e088299e0f9039) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/right strafe.fbx using Guid(3db5c6792256221499e088299e0f9039) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04ad3431e5488b8a2e9cf182b93ade95') in 0.017100 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.780613 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/xbot.fbx
-  artifactKey: Guid(7652f00b5cc9a3d408fadde17a44aa17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/xbot.fbx using Guid(7652f00b5cc9a3d408fadde17a44aa17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30a90488ffb4d550b3acb7e95600fc24') in 0.404031 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 22.007959 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/idle.fbx
-  artifactKey: Guid(9de57dcab083b7447b0ab4ea8d2fb03f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/idle.fbx using Guid(9de57dcab083b7447b0ab4ea8d2fb03f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9bf24e07cd6e06c781a911656f0e55f8') in 0.016725 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.219619 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/jump.fbx
-  artifactKey: Guid(3cf89466186526f4aa81fa32344fb13d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/jump.fbx using Guid(3cf89466186526f4aa81fa32344fb13d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69ea5edc6a35386a01331ab0931d2068') in 0.011535 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.848489 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/left strafe walk.fbx
-  artifactKey: Guid(32fda03f5e8eb494e9ffb7f88b4a0250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/left strafe walk.fbx using Guid(32fda03f5e8eb494e9ffb7f88b4a0250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '317af928104a9e93611e56f65c3a7a22') in 0.019454 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 11.814377 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/left strafe.fbx
-  artifactKey: Guid(32b5d25ca1e4b59409e8b2501bad712d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/left strafe.fbx using Guid(32b5d25ca1e4b59409e8b2501bad712d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5109e2a83f5becf8ae66f32f5804fd6') in 0.012889 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 9.498970 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/right strafe.fbx
-  artifactKey: Guid(3db5c6792256221499e088299e0f9039) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/right strafe.fbx using Guid(3db5c6792256221499e088299e0f9039) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40a237471c367a99768a3e03bc217177') in 0.008767 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 6.014880 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/running.fbx
-  artifactKey: Guid(bf12f0cdecdc3e743ad9da31f0796ba5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/running.fbx using Guid(bf12f0cdecdc3e743ad9da31f0796ba5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5c376204cf79efe058bc13b1fa4b4189') in 0.018055 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 54.587821 seconds.
-  path: Assets/Project/Runtime/Prefabs/CM 3rdPerson Normal.prefab
-  artifactKey: Guid(92d1a27714464764380a0d37e620d54d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Prefabs/CM 3rdPerson Normal.prefab using Guid(92d1a27714464764380a0d37e620d54d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75d4593192d3531392fbeb66a97ad9e8') in 0.046811 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 62.492918 seconds.
-  path: Assets/Project/Runtime/Animation/New Animation.anim
-  artifactKey: Guid(66777fc14d13d9044a6d5b631364400b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/New Animation.anim using Guid(66777fc14d13d9044a6d5b631364400b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a18aed6be4daccf825d04ef0c63f677') in 0.012544 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 7.625964 seconds.
-  path: Assets/Project/Runtime/Animation/New Animator Controller.controller
-  artifactKey: Guid(f60cb3a3e072acb4d939a2bae0752744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/New Animator Controller.controller using Guid(f60cb3a3e072acb4d939a2bae0752744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '857c94773e49056045abeee5a6526314') in 0.013067 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 100.781637 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/idle.fbx
-  artifactKey: Guid(9de57dcab083b7447b0ab4ea8d2fb03f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/idle.fbx using Guid(9de57dcab083b7447b0ab4ea8d2fb03f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f789c1ea97a429dd4b7747b6eece0188') in 0.008259 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 56.887817 seconds.
-  path: Assets/Project/Runtime/Models/gura_model.fbx
-  artifactKey: Guid(9d5ec73bb676f4746babf11f32871d6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Models/gura_model.fbx using Guid(9d5ec73bb676f4746babf11f32871d6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd0eed4007b57380a418e3cc3a0482be8') in 0.146684 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 34.883940 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/idle.fbx
-  artifactKey: Guid(9de57dcab083b7447b0ab4ea8d2fb03f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/idle.fbx using Guid(9de57dcab083b7447b0ab4ea8d2fb03f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b08fbad0b64ae2f08d09e888e32da936') in 0.007486 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 148.377499 seconds.
-  path: Assets/Project/Runtime/Prefabs/Player.prefab
-  artifactKey: Guid(c300ff40ce9b6ba4e909a99fdf351c4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Prefabs/Player.prefab using Guid(c300ff40ce9b6ba4e909a99fdf351c4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7b909d8774f34941aba83b7273a604d') in 0.076856 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 17.977222 seconds.
-  path: Assets/Project/Runtime/Animation/Controllers/Gura.controller
-  artifactKey: Guid(d1aee245f02de3f478f0311fcdb30dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Controllers/Gura.controller using Guid(d1aee245f02de3f478f0311fcdb30dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cbfb3709b42393076279c5d2141dc7c3') in 0.011421 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.276673 seconds.
-  path: Assets/Project/Runtime/Prefabs/Player.prefab
-  artifactKey: Guid(c300ff40ce9b6ba4e909a99fdf351c4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Prefabs/Player.prefab using Guid(c300ff40ce9b6ba4e909a99fdf351c4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) The Animator Controller (Gura) you have used is not valid. Animations will not play
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Modules/Animation/Director/AnimatorControllerPlayable.cpp line 333]
-
-The Animator Controller (Gura) you have used is not valid. Animations will not play
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.EditorUtility:InitInstantiatedPreviewRecursive (UnityEngine.GameObject)
-UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
-UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
-UnityEditor.GameObjectInspector:GetPreviewData ()
-UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
-UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
-
-[C:\buildslave\unity\build\Modules/Animation/Director/AnimatorControllerPlayable.cpp line 333]
-
- -> (artifact id: '8b9aac469146f637792bfcd1c4bfb813') in 0.039413 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 76.844643 seconds.
-  path: Assets/Project/Runtime/Animation/Controllers/Gura.controller
-  artifactKey: Guid(d1aee245f02de3f478f0311fcdb30dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Controllers/Gura.controller using Guid(d1aee245f02de3f478f0311fcdb30dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '94988c190d7889e8949ea279f3a2560b') in 0.003808 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 10.173780 seconds.
-  path: Assets/Project/Runtime/Animation/Controllers/Gura.controller
-  artifactKey: Guid(d1aee245f02de3f478f0311fcdb30dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Controllers/Gura.controller using Guid(d1aee245f02de3f478f0311fcdb30dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2c6808f1de9b52dcd394791b73370fc') in 0.003249 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 295.747870 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/running.fbx
-  artifactKey: Guid(bf12f0cdecdc3e743ad9da31f0796ba5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/running.fbx using Guid(bf12f0cdecdc3e743ad9da31f0796ba5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5ffbd68f5fc9803984af227638a79d6') in 0.013612 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.994876 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/idle.fbx
-  artifactKey: Guid(9de57dcab083b7447b0ab4ea8d2fb03f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/idle.fbx using Guid(9de57dcab083b7447b0ab4ea8d2fb03f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fff5153e4f3e8e18640ccfcced35ff3e') in 0.008280 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 67.629165 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/right strafe walk.fbx
-  artifactKey: Guid(ec244140111a2484f8bceb6a77076496) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/right strafe walk.fbx using Guid(ec244140111a2484f8bceb6a77076496) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd2feb6cdb6d23e311ae84f049be4558c') in 0.017401 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 3.183076 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/left strafe.fbx
-  artifactKey: Guid(32b5d25ca1e4b59409e8b2501bad712d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/left strafe.fbx using Guid(32b5d25ca1e4b59409e8b2501bad712d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de802cb6d5b8dcdefedfe12117de5768') in 0.009150 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 2.194913 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/right turn (2).fbx
-  artifactKey: Guid(19c06e2a50fe1164eb52d92acf8d4953) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/right turn (2).fbx using Guid(19c06e2a50fe1164eb52d92acf8d4953) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aadbb3c0fd2a8bc3a81b6eb38a4ff409') in 0.015190 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 12.439268 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/walking.fbx
-  artifactKey: Guid(924140d4b90855c42ba5fe9650dac755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/walking.fbx using Guid(924140d4b90855c42ba5fe9650dac755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91e4b7104f9c6a568385b8615a1f8ff0') in 0.014864 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 13.774527 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/left strafe walk.fbx
-  artifactKey: Guid(32fda03f5e8eb494e9ffb7f88b4a0250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/left strafe walk.fbx using Guid(32fda03f5e8eb494e9ffb7f88b4a0250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8642175829ca019cf55ffd5ba55577d6') in 0.008401 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 24.831836 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/xbot.fbx
-  artifactKey: Guid(7652f00b5cc9a3d408fadde17a44aa17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/xbot.fbx using Guid(7652f00b5cc9a3d408fadde17a44aa17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04401b558e42d3f67db09b171f654326') in 0.055913 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 13.696726 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/idle.fbx
-  artifactKey: Guid(9de57dcab083b7447b0ab4ea8d2fb03f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/idle.fbx using Guid(9de57dcab083b7447b0ab4ea8d2fb03f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d945ac4b4074da6b3190804f4c88ef0') in 0.007593 seconds 
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.010935 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.19 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Warning: Annotation not found!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEditor.ProBuilder.EditorUtility:SetGizmoIconEnabled (System.Type,bool) (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs:575)
-UnityEditor.ProBuilder.HierarchyListener:.cctor () (at Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/HierarchyListener.cs:21)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-[Library/PackageCache/com.unity.probuilder@5.0.3/Editor/EditorCore/EditorUtility.cs line 575]
-
-Mono: successfully reloaded assembly
-- Completed reload, in  1.830 seconds
-Platform modules already initialized, skipping
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
-Refreshing native plugins compatible for Editor in 1.09 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 4874 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 210.1 MB.
-System memory in use after: 207.6 MB.
-
-Unloading 56 unused Assets to reduce memory usage. Loaded Objects now: 5476.
-Total: 4.934400 ms (FindLiveObjects: 0.401900 ms CreateObjectMapping: 0.230600 ms MarkObjects: 2.889300 ms  DeleteObjects: 1.411000 ms)
+Unloading 196 unused Assets to reduce memory usage. Loaded Objects now: 5405.
+Total: 7.224000 ms (FindLiveObjects: 0.557200 ms CreateObjectMapping: 0.534500 ms MarkObjects: 4.341200 ms  DeleteObjects: 1.789000 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 205.566260 seconds.
-  path: Assets/Project/Runtime/Animation/Controllers/Gura.controller
-  artifactKey: Guid(d1aee245f02de3f478f0311fcdb30dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Controllers/Gura.controller using Guid(d1aee245f02de3f478f0311fcdb30dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96623f4c3df73f3fb9563e82f89008e5') in 0.056529 seconds 
+  path: Assets/Scenes/Demo.unity
+  artifactKey: Guid(d43e86fe91277bd4384e12301358bea8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Demo.unity using Guid(d43e86fe91277bd4384e12301358bea8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ccb200f0921c337a2d29f9efb5dff689') in 0.020165 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 78.345438 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/left strafe.fbx
-  artifactKey: Guid(32b5d25ca1e4b59409e8b2501bad712d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/left strafe.fbx using Guid(32b5d25ca1e4b59409e8b2501bad712d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57cf9a41f581598d2ad5da5c19d65fad') in 0.023336 seconds 
+  Time since last request: 0.000583 seconds.
+  path: Assets/Scenes/Loading.unity
+  artifactKey: Guid(798a371167155574da5efb6b80df756e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Loading.unity using Guid(798a371167155574da5efb6b80df756e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a0e7ccc60ca6012a7b4fcaae21678c2') in 0.010730 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.479769 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/left strafe walk.fbx
-  artifactKey: Guid(32fda03f5e8eb494e9ffb7f88b4a0250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/left strafe walk.fbx using Guid(32fda03f5e8eb494e9ffb7f88b4a0250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a584a8eaf52cea93d7d2900766073755') in 0.007757 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.229828 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/left turn.fbx
-  artifactKey: Guid(b2f86a24779425a4fbabe61631ca73b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/left turn.fbx using Guid(b2f86a24779425a4fbabe61631ca73b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4b509f2120b9cdae0c6050dbd35f680') in 0.015755 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 8.082220 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/left turn (2).fbx
-  artifactKey: Guid(a94066c16d6121b4b84b13194b0a00fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/left turn (2).fbx using Guid(a94066c16d6121b4b84b13194b0a00fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bec64bae06a8b2f46c62876d642f1406') in 0.013978 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 36.750925 seconds.
-  path: Assets/Project/Runtime/Animation/Controllers/Gura.controller
-  artifactKey: Guid(d1aee245f02de3f478f0311fcdb30dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Controllers/Gura.controller using Guid(d1aee245f02de3f478f0311fcdb30dfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '67e5552f47b60dff87d691c0f5890978') in 0.008760 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 125.229786 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/right strafe.fbx
-  artifactKey: Guid(3db5c6792256221499e088299e0f9039) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/right strafe.fbx using Guid(3db5c6792256221499e088299e0f9039) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce54f2268e29ebaec544dff390d55e62') in 0.010332 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 16.593868 seconds.
-  path: Assets/Project/Runtime/Animation/Animations/running.fbx
-  artifactKey: Guid(bf12f0cdecdc3e743ad9da31f0796ba5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Project/Runtime/Animation/Animations/running.fbx using Guid(bf12f0cdecdc3e743ad9da31f0796ba5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d71cce6fbb8a3f244622a66191c7d4e') in 0.020863 seconds 
+  Time since last request: 0.000448 seconds.
+  path: Assets/Scenes/Menu.unity
+  artifactKey: Guid(d4a3974f2c0242341bbb19d6f95f0872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Menu.unity using Guid(d4a3974f2c0242341bbb19d6f95f0872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '922368340d2d61f5efb130fbd14df06e') in 0.012401 seconds 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
-=======
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56684
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/2021.1.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003511 seconds.
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 171.23 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  2.240 seconds
-Platform modules already initialized, skipping
-Registering precompiled user dll's ...
-Registered in 0.008282 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 208.71 ms, found 1 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Find all reader and writers took 288 milliseconds
-Script Module: UnityEngine.UI.dll
-Weave behaviours and messages took184 milliseconds
-Find all reader and writers took 220 milliseconds
-Script Module: Unity.RenderPipelines.Core.Runtime.dll
-Weave behaviours and messages took121 milliseconds
-Find all reader and writers took 170 milliseconds
-Script Module: UnityEngine.TestRunner.dll
-Weave behaviours and messages took64 milliseconds
-Find all reader and writers took 172 milliseconds
-Script Module: Unity.Mathematics.dll
-Weave behaviours and messages took629 milliseconds
-Find all reader and writers took 263 milliseconds
-Script Module: Unity.InputSystem.dll
-Weave behaviours and messages took555 milliseconds
-Find all reader and writers took 359 milliseconds
-Script Module: SimpleWebTransport.dll
-Weave behaviours and messages took17 milliseconds
-Find all reader and writers took 349 milliseconds
-Script Module: Unity.VisualScripting.State.dll
-Weave behaviours and messages took10 milliseconds
-Find all reader and writers took 197 milliseconds
-Script Module: Unity.VisualScripting.Core.dll
-Weave behaviours and messages took299 milliseconds
-Find all reader and writers took 143 milliseconds
-Script Module: Unity.RenderPipelines.Universal.Runtime.dll
-Weave behaviours and messages took113 milliseconds
-Find all reader and writers took 135 milliseconds
-Script Module: Unity.VisualScripting.Flow.dll
-Weave behaviours and messages took151 milliseconds
-Find all reader and writers took 161 milliseconds
-Script Module: Unity.TextMeshPro.dll
-Weave behaviours and messages took146 milliseconds
-Find all reader and writers took 130 milliseconds
-Script Module: Unity.ProBuilder.Poly2Tri.dll
-Weave behaviours and messages took15 milliseconds
-Find all reader and writers took 119 milliseconds
-Script Module: Cinemachine.dll
-Weave behaviours and messages took71 milliseconds
-Find all reader and writers took 113 milliseconds
-Script Module: Unity.Timeline.dll
-Weave behaviours and messages took32 milliseconds
-Find all reader and writers took 137 milliseconds
-Script Module: Unity.ProBuilder.dll
-Weave behaviours and messages took155 milliseconds
-Find all reader and writers took 104 milliseconds
-Script Module: Telepathy.dll
-Weave behaviours and messages took3 milliseconds
-Find all reader and writers took 91 milliseconds
-Script Module: Unity.ProBuilder.Csg.dll
-Weave behaviours and messages took2 milliseconds
-Find all reader and writers took 627 milliseconds
-Script Module: kcp2k.dll
-Weave behaviours and messages took13 milliseconds
-Find all reader and writers took 304 milliseconds
-Script Module: Unity.RenderPipeline.Universal.ShaderLibrary.dll
-Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 221 milliseconds
-Script Module: Project.External.dll
-Weave behaviours and messages took59 milliseconds
-Find all reader and writers took 1015 milliseconds
-Script Module: Unity.ProBuilder.KdTree.dll
-Weave behaviours and messages took7 milliseconds
-Find all reader and writers took 326 milliseconds
-Script Module: Unity.RenderPipelines.Core.ShaderLibrary.dll
-Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 217 milliseconds
-Script Module: Unity.ProBuilder.Stl.dll
-Weave behaviours and messages took1 milliseconds
-Find all reader and writers took 239 milliseconds
-Script Module: Unity.RenderPipelines.Universal.Shaders.dll
-Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 235 milliseconds
-Script Module: Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll
-Weave behaviours and messages took0 milliseconds
-Find all reader and writers took 567 milliseconds
-Script Module: com.unity.cinemachine.editor.dll
-Weave behaviours and messages took270 milliseconds
->>>>>>> Stashed changes
