@@ -10,6 +10,7 @@ public class PlayerLocomotion : NetworkBehaviour
 {
     Camera playerCamera;
     Rigidbody playerBody;
+    Animator animator;
     [SerializeField] GameObject playerModel;
     [SerializeField] private float m_Speed = 5f;
     [SerializeField] private float jumpForce = 5f;
@@ -45,6 +46,7 @@ public class PlayerLocomotion : NetworkBehaviour
     {
         playerBody = GetComponent<Rigidbody>();
         playerInput = GetComponent<PlayerInput>();
+        animator = GetComponent<Animator>();
         playerCamera = Camera.main;
     }
 
@@ -66,6 +68,9 @@ public class PlayerLocomotion : NetworkBehaviour
         currentMovement = new Vector3(currentMovementInput.x, 0, currentMovementInput.y);
         currentMovement = currentMovement.x * playerCamera.transform.right.normalized + currentMovement.z * playerCamera.transform.forward.normalized;
         currentMovement.y = 0;
+        animator.SetFloat("XInput", currentMovementInput.x);
+        animator.SetFloat("YInput", currentMovementInput.y);
+        animator.SetBool("isJumping", !isGrounded);
     }
 
     void FixedUpdate()
@@ -113,6 +118,8 @@ public class PlayerLocomotion : NetworkBehaviour
         if (isGrounded)
         {
             playerBody.AddRelativeForce(transform.up * jumpForce, ForceMode.Impulse);
+            animator.SetTrigger("Jump");
+            //animator.ResetTrigger("Jump");
         }
     }
 }
