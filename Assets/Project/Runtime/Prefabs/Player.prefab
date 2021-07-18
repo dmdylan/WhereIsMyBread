@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8508423520095954872}
   - component: {fileID: 4128756041639642375}
   - component: {fileID: -7582350753728585690}
-  - component: {fileID: 8576513319977663320}
+  - component: {fileID: 6168434100770745367}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -222,23 +222,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   groundDistance: 0.2
---- !u!114 &8576513319977663320
+--- !u!114 &6168434100770745367
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3716426839125238743}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5281785fbe32be4488391fbe4acda0d3, type: 3}
+  m_Script: {fileID: 11500000, guid: e8fce4bd108661c4d9740aea3bc971ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useCharacterForward: 0
-  lockToCameraForward: 0
-  turnSpeed: 10
-  sprintJoystick: 332
-  sprintKeyboard: 32
+  ActivationKey: 306
+  PriorityBoostAmount: 10
+  Reticle: {fileID: 0}
 --- !u!1 &8290282072315503967
 GameObject:
   m_ObjectHideFlags: 0
