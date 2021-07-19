@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.InputSystem;
+using Cinemachine;
 
 public class ActivateOnKeypress : MonoBehaviour
 {
+    [SerializeField] private GameObject reticle;
     private PlayerInput playerInput;
     private InputAction aimAction;
-    public int PriorityBoostAmount = 10;
-    public GameObject Reticle;
-
-    Cinemachine.CinemachineVirtualCameraBase vcam;
-    bool boosted = false;
+    private int priorityBoostAmount = 10;
+    private CinemachineVirtualCameraBase vcam;
+    private bool boosted = false;
 
     private void OnEnable()
     {
@@ -21,43 +21,38 @@ public class ActivateOnKeypress : MonoBehaviour
         playerInput.actions["Aim"].Disable();
     }
 
-    void Start()
+    private void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
-        vcam = GetComponent<Cinemachine.CinemachineVirtualCameraBase>();
+    }
+
+    void Start()
+    {
+        vcam = GameManager.Instance.CinemachineVirtualCameras[1];
+        aimAction = playerInput.actions["Aim"];
         aimAction.started += AimAction_started;
         aimAction.canceled += AimAction_canceled;
     }
 
-    private void AimAction_canceled(InputAction.CallbackContext obj)
+    private void AimAction_canceled(InputAction.CallbackContext context)
     {
-        throw new System.NotImplementedException();
-    }
-
-    private void AimAction_started(InputAction.CallbackContext obj)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    void Update()
-    {
-        if (vcam != null)
-        {
-            if (Input.GetKey(KeyCode.Mouse1))
-            {
-                if (!boosted)
-                {
-                    vcam.Priority += PriorityBoostAmount;
-                    boosted = true;
-                }
-            }
-            else if (boosted)
-            {
-                vcam.Priority -= PriorityBoostAmount;
-                boosted = false;
-            }
+        if (boosted)
+        {         
+            vcam.Priority -= priorityBoostAmount;
+            boosted = false;
         }
-        if (Reticle != null)
-            Reticle.SetActive(boosted);
+        if (reticle != null)
+            reticle.SetActive(boosted);
+    }
+
+    private void AimAction_started(InputAction.CallbackContext context)
+    {
+        if (!boosted)
+        {
+            vcam.Priority += priorityBoostAmount;
+            boosted = true;
+        }
+        if (reticle != null)
+            reticle.SetActive(boosted);
     }
 }
