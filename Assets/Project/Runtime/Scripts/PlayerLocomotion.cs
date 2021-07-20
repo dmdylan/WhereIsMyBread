@@ -36,9 +36,6 @@ public class PlayerLocomotion : NetworkBehaviour
     private float turnSpeedMultiplier;
     private Vector3 targetDirection;
     private Quaternion freeRotation;
-    private float _cinemachineTargetYaw;
-    private float _cinemachineTargetPitch;
-    private const float _threshold = 0.01f;
 
     private void OnEnable()
     {
@@ -71,6 +68,7 @@ public class PlayerLocomotion : NetworkBehaviour
         movementAction.performed += Movement_performed;
         movementAction.canceled += Movement_performed;
         jumpAction.performed += JumpAction_performed;
+        lookAction.started += LookAction_performed;
         CameraFollowSetup();
     }
 
@@ -82,7 +80,6 @@ public class PlayerLocomotion : NetworkBehaviour
         currentMovement = new Vector3(currentMovementInput.x, 0, currentMovementInput.y);
         currentMovement = currentMovement.x * playerCamera.transform.right.normalized + currentMovement.z * playerCamera.transform.forward.normalized;
         currentMovement.y = 0;
-        lookInput = lookAction.ReadValue<Vector2>();
         animator.SetFloat("XInput", currentMovementInput.x);
         animator.SetFloat("YInput", currentMovementInput.y);
         animator.SetBool("isJumping", !isGrounded);
@@ -93,22 +90,9 @@ public class PlayerLocomotion : NetworkBehaviour
         //Apply the movement vector to the current position, which is
         //multiplied by deltaTime and speed for a smooth MovePosition
         playerBody.MovePosition(transform.position + currentMovement * Time.deltaTime * m_Speed);
-        TargetDirection();
-        if (currentMovementInput != Vector2.zero && targetDirection.magnitude > 0.1f)
-        {
-            Vector3 lookDirection = targetDirection.normalized;
-            freeRotation = Quaternion.LookRotation(lookDirection, transform.up);
-            var diferenceRotation = freeRotation.eulerAngles.y - transform.eulerAngles.y;
-            var eulerY = transform.eulerAngles.y;
-
-            if (diferenceRotation < 0 || diferenceRotation > 0) eulerY = freeRotation.eulerAngles.y;
-            var euler = new Vector3(0, eulerY, 0);
-
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(euler), rotationSpeed * turnSpeedMultiplier * Time.deltaTime);
-        }
     }
 
-    private void TargetDirection()
+    private Vector3 TargetDirection()
     {
         turnSpeedMultiplier = 1f;
         var forward = playerCamera.transform.TransformDirection(Vector3.forward);
@@ -119,39 +103,8 @@ public class PlayerLocomotion : NetworkBehaviour
 
         // determine the direction the player will face based on input and the referenceTransform's right and forward directions
         targetDirection = currentMovementInput.x * right + currentMovementInput.y * forward;
+        return targetDirection;
     }
-
-    private void CameraRotation()
-    {
-        
-        // if there is an input and camera position is not fixed
-        if (lookInput.sqrMagnitude >= _threshold)// && !LockCameraPosition)
-        {
-            _cinemachineTargetYaw += lookInput.x * Time.deltaTime * lookSpeed;
-            _cinemachineTargetPitch += lookInput.y * Time.deltaTime * lookSpeed;
-        }
-    
-        // clamp our rotations so our values are limited 360 degrees
-        _cinemachineTargetYaw = ClampAngle(_cinemachineTargetYaw, float.MinValue, float.MaxValue);
-        _cinemachineTargetPitch = ClampAngle(_cinemachineTargetPitch, bottomClamp, topClamp);
-    
-        // Cinemachine will follow this target
-        cameraFollowPoint.rotation = Quaternion.Euler(_cinemachineTargetPitch + cameraAngleOverride, _cinemachineTargetYaw, 0.0f);
-    }
-
-    			// note: Vector2's != operator uses approximation so is not floating point error prone, and is cheaper than magnitude
-			// if there is a move input rotate player when the player is moving
-	//		if (_input.move != Vector2.zero)
-	//		{
-	//			_targetRotation = Mathf.Atan2(inputDirection.x, inputDirection.z) * Mathf.Rad2Deg + _mainCamera.transform.eulerAngles.y;
-    //float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, _targetRotation, ref _rotationVelocity, RotationSmoothTime);
-    //
-    //// rotate to face input direction relative to camera position
-    //transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
-	//		}
-    //
-    //
-    //Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
     private void Movement_performed(InputAction.CallbackContext context)
     {
@@ -166,8 +119,12 @@ public class PlayerLocomotion : NetworkBehaviour
         {
             playerBody.AddRelativeForce(transform.up * jumpForce, ForceMode.Impulse);
             animator.SetTrigger("Jump");
-            //animator.ResetTrigger("Jump");
         }
+    }
+
+    private void LookAction_performed(InputAction.CallbackContext context)
+    {
+        lookInput = context.ReadValue<Vector2>();
     }
 
     private void CameraFollowSetup()

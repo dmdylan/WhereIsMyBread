@@ -56,10 +56,10 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Project\Runtime\Scripts\PlayerInputController.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\GameManager.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\AimCameraScript.cs" />
     <Compile Include="Assets\Project\Runtime\Input\PlayerControls.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\PlayerLocomotion.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\CharacterMovement.cs" />
   </ItemGroup>
