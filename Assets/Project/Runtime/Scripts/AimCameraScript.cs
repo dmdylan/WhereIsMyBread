@@ -2,7 +2,7 @@
 using UnityEngine.InputSystem;
 using Cinemachine;
 
-public class ActivateOnKeypress : MonoBehaviour
+public class AimCameraScript : MonoBehaviour
 {
     [SerializeField] private GameObject reticle;
     private PlayerInput playerInput;
