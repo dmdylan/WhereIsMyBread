@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &4252088 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2070925441746177913, guid: a1a802ecaf6775746bb2a929fb554ad8, type: 3}
+  m_PrefabInstance: {fileID: 1794798660}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &69110832
 Mesh:
   m_ObjectHideFlags: 0
@@ -5503,6 +5514,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &886856340 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4840347067231357687, guid: b19719d23216437448cdb0aa8ce81023, type: 3}
+  m_PrefabInstance: {fileID: 6886348753889958078}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &888074993
 GameObject:
   m_ObjectHideFlags: 0
@@ -9315,7 +9337,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 032708246d88f71448b5ae47f86f21d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cinemachineVirtualCameras: []
+  cinemachineVirtualCameras:
+  - {fileID: 4252088}
+  - {fileID: 886856340}
 --- !u!4 &1302965699
 Transform:
   m_ObjectHideFlags: 0
@@ -9330,6 +9354,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1447406328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 435617337333096599, guid: a93a36a7bb794474b9ba3e81649effb8, type: 3}
+  m_PrefabInstance: {fileID: 4271538317567436402}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1447406333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447406328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8fce4bd108661c4d9740aea3bc971ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1470432470
 GameObject:
   m_ObjectHideFlags: 0
@@ -18820,13 +18861,21 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 8338988565045968825}
+    - target: {fileID: 4840347067231357687, guid: b19719d23216437448cdb0aa8ce81023, type: 3}
+      propertyPath: m_Priority
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840347067231357687, guid: b19719d23216437448cdb0aa8ce81023, type: 3}
+      propertyPath: m_Lens.m_SensorSize.x
+      value: 1.7776
+      objectReference: {fileID: 0}
     - target: {fileID: 4840347067231357705, guid: b19719d23216437448cdb0aa8ce81023, type: 3}
       propertyPath: m_Name
       value: Aim Camera
       objectReference: {fileID: 0}
     - target: {fileID: 4840347067231357705, guid: b19719d23216437448cdb0aa8ce81023, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b19719d23216437448cdb0aa8ce81023, type: 3}
