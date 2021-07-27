@@ -349,8 +349,9 @@
 "Assets/Project/Runtime/Scripts/CharacterMovement.cs"
 "Assets/Project/Runtime/Scripts/GameManager.cs"
 "Assets/Project/Runtime/Scripts/PlayerInputController.cs"
-"Assets/Project/Runtime/Scripts/PlayerLocomotion.cs"
 "Assets/Project/Runtime/Scripts/ThirdPersonController.cs"
+"Assets/Project/Runtime/Scripts/ThrowTrident.cs"
+"Assets/Project/Runtime/Scripts/Trident.cs"
 -langversion:8.0
 
 /deterministic

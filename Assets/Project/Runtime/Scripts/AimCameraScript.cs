@@ -2,21 +2,43 @@
 using UnityEngine.InputSystem;
 using Cinemachine;
 using StarterAssets;
+using System.Collections;
+using Mirror;
 
-public class AimCameraScript : MonoBehaviour
+public class AimCameraScript : NetworkBehaviour
 {
     //[SerializeField] private GameObject reticle;
+    [SerializeField] private int cameraBoostAmount;
     private CinemachineVirtualCamera vcam;
     private StarterAssetsInputs input;
+    private bool isAiming = false;
 
-    void Start()
+    public override void OnStartLocalPlayer()
     {
+        base.OnStartLocalPlayer();
         vcam = GameManager.Instance.CinemachineVirtualCameras[1];
         input = GetComponent<StarterAssetsInputs>();
+        StartCoroutine(ChangeCamera());
     }
 
-    private void OnAim()
+    IEnumerator ChangeCamera()
     {
-        vcam.Priority += 10;
+        if(input.Aim == true && isAiming == false)
+        {
+            vcam.Priority += cameraBoostAmount;
+            isAiming = true;
+        }
+        else if(input.Aim == true && isAiming == true)
+        {
+            yield return new WaitForSeconds(.1f);
+        }
+        else if(input.Aim == false && isAiming == true)
+        {
+            vcam.Priority -= cameraBoostAmount;
+            isAiming = false;
+        }
+
+        yield return new WaitForSeconds(.1f);
+        StartCoroutine(ChangeCamera());
     }
 }

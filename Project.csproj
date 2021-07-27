@@ -59,8 +59,9 @@
     <Compile Include="Assets\Project\Runtime\Scripts\AimCameraScript.cs" />
     <Compile Include="Assets\Project\Runtime\Input\PlayerControls.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\ThirdPersonController.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\PlayerLocomotion.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\CharacterMovement.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\ThrowTrident.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\Trident.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Project\Runtime\Project.asmdef" />

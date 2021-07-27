@@ -1,4 +1,5 @@
 ﻿using Cinemachine;
+using Mirror;
 using UnityEngine;
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 using UnityEngine.InputSystem;
@@ -13,7 +14,7 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
 	[RequireComponent(typeof(PlayerInput))]
 #endif
-	public class ThirdPersonController : MonoBehaviour
+	public class ThirdPersonController : NetworkBehaviour
 	{
 		[Header("Player")]
 		[Tooltip("Aim speed of the character in m/s")]
@@ -101,15 +102,17 @@ namespace StarterAssets
 			}
 		}
 
-		private void Start()
-		{
+        public override void OnStartLocalPlayer()
+        {
+            base.OnStartLocalPlayer();
 			_hasAnimator = TryGetComponent(out _animator);
 			_controller = GetComponent<CharacterController>();
 			_input = GetComponent<StarterAssetsInputs>();
 			CameraFollowSetup();
 
 			AssignAnimationIDs();
-
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
 			// reset our timeouts on start
 			_jumpTimeoutDelta = JumpTimeout;
 			_fallTimeoutDelta = FallTimeout;
@@ -117,6 +120,8 @@ namespace StarterAssets
 
 		private void Update()
 		{
+			if (!isLocalPlayer) return;
+
 			_hasAnimator = TryGetComponent(out _animator);
 
 			JumpAndGravity();
@@ -126,6 +131,8 @@ namespace StarterAssets
 
 		private void LateUpdate()
 		{
+			if (!isLocalPlayer) return;
+
 			CameraRotation();
 		}
 

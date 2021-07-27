@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 4225995506107251947}
   - component: {fileID: 435617337333096603}
   - component: {fileID: 4271538316394140745}
+  - component: {fileID: 1447406333}
+  - component: {fileID: 1447406337}
   m_Layer: 8
   m_Name: Player_Gura
   m_TagString: Player
@@ -87,6 +89,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26e54e5a728a9234ab24fcf1460ed8a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
   AimSpeed: 2
   MoveSpeed: 5
   RotationSmoothTime: 0.12
@@ -100,7 +104,7 @@ MonoBehaviour:
   GroundedRadius: 0.28
   GroundLayers:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 577
   CinemachineCameraTarget: {fileID: 5259505749054740940}
   TopClamp: 70
   BottomClamp: -30
@@ -236,6 +240,37 @@ MonoBehaviour:
   visible: 0
   m_AssetId: 
   hasSpawned: 0
+--- !u!114 &1447406333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435617337333096599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8fce4bd108661c4d9740aea3bc971ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  cameraBoostAmount: 10
+--- !u!114 &1447406337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435617337333096599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0abfa305b8ae53448d10d326e10e827, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncMode: 0
+  syncInterval: 0.1
+  tridentPrefab: {fileID: 7658206287885011747, guid: 51877b291c6fea64e91727eb162eb121, type: 3}
+  tridentSpawnPosition: {fileID: 1406600721676399764}
 --- !u!1 &1010375371380303023
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +330,36 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 954850006363142701}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6171876418764184678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1406600721676399764}
+  m_Layer: 0
+  m_Name: TridentSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1406600721676399764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6171876418764184678}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0.08785454, y: 0.004181819, z: -0.022551056}
+  m_LocalScale: {x: 0.18181817, y: 0.18181822, z: 0.18181822}
+  m_Children: []
+  m_Father: {fileID: 4485889583937448654}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &4271538316696273096
@@ -369,5 +434,10 @@ PrefabInstance:
 --- !u!4 &6885613491222008549 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7262355161598267949, guid: c8f8f588d5fdde6499f3721496419721, type: 3}
+  m_PrefabInstance: {fileID: 4271538316696273096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4485889583937448654 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 362145838204561926, guid: c8f8f588d5fdde6499f3721496419721, type: 3}
   m_PrefabInstance: {fileID: 4271538316696273096}
   m_PrefabAsset: {fileID: 0}
