@@ -130,10 +130,10 @@
 -define:CSHARP_7_3_OR_NEWER
 -r:"Assets/Project/External/DOTween/DOTween.dll"
 -r:"Assets/Project/External/DOTween/Editor/DOTweenEditor.dll"
--r:"Assets/Project/External/Mirror/Plugins/Mono.Cecil/Mono.CecilX.dll"
--r:"Assets/Project/External/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Mdb.dll"
--r:"Assets/Project/External/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Pdb.dll"
--r:"Assets/Project/External/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Rocks.dll"
+-r:"Assets/Project/Runtime/Mirror/Plugins/Mono.Cecil/Mono.CecilX.dll"
+-r:"Assets/Project/Runtime/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Mdb.dll"
+-r:"Assets/Project/Runtime/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Pdb.dll"
+-r:"Assets/Project/Runtime/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Rocks.dll"
 -r:"Z:/Unity Projects/WhereIsMyBread/Library/PackageCache/com.unity.burst@1.5.4/Unity.Burst.CodeGen/Unity.Burst.Cecil.dll"
 -r:"Z:/Unity Projects/WhereIsMyBread/Library/PackageCache/com.unity.burst@1.5.4/Unity.Burst.CodeGen/Unity.Burst.Cecil.Mdb.dll"
 -r:"Z:/Unity Projects/WhereIsMyBread/Library/PackageCache/com.unity.burst@1.5.4/Unity.Burst.CodeGen/Unity.Burst.Cecil.Pdb.dll"
@@ -341,8 +341,8 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/Mirror.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
-"Assets/Project/External/Mirror/Authenticators/BasicAuthenticator.cs"
-"Assets/Project/External/Mirror/Authenticators/TimeoutAuthenticator.cs"
+"Assets/Project/Runtime/Mirror/Authenticators/BasicAuthenticator.cs"
+"Assets/Project/Runtime/Mirror/Authenticators/TimeoutAuthenticator.cs"
 -langversion:8.0
 
 /deterministic

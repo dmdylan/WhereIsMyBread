@@ -130,10 +130,10 @@
 -define:CSHARP_7_3_OR_NEWER
 -r:"Assets/Project/External/DOTween/DOTween.dll"
 -r:"Assets/Project/External/DOTween/Editor/DOTweenEditor.dll"
--r:"Assets/Project/External/Mirror/Plugins/Mono.Cecil/Mono.CecilX.dll"
--r:"Assets/Project/External/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Mdb.dll"
--r:"Assets/Project/External/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Pdb.dll"
--r:"Assets/Project/External/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Rocks.dll"
+-r:"Assets/Project/Runtime/Mirror/Plugins/Mono.Cecil/Mono.CecilX.dll"
+-r:"Assets/Project/Runtime/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Mdb.dll"
+-r:"Assets/Project/Runtime/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Pdb.dll"
+-r:"Assets/Project/Runtime/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Rocks.dll"
 -r:"Z:/Unity Projects/WhereIsMyBread/Library/PackageCache/com.unity.burst@1.5.4/Unity.Burst.CodeGen/Unity.Burst.Cecil.dll"
 -r:"Z:/Unity Projects/WhereIsMyBread/Library/PackageCache/com.unity.burst@1.5.4/Unity.Burst.CodeGen/Unity.Burst.Cecil.Mdb.dll"
 -r:"Z:/Unity Projects/WhereIsMyBread/Library/PackageCache/com.unity.burst@1.5.4/Unity.Burst.CodeGen/Unity.Burst.Cecil.Pdb.dll"
@@ -339,10 +339,15 @@
 -r:"Z:/Unity/2021.1.15f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/System.Xml.Linq.dll"
 -r:"Z:/Unity/2021.1.15f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Cinemachine.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Mirror.Components.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Mirror.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InputSystem.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+-analyzer:"Assets/Project/Runtime/Mirror/Plugins/Mono.Cecil/Mono.CecilX.dll"
+-analyzer:"Assets/Project/Runtime/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Mdb.dll"
+-analyzer:"Assets/Project/Runtime/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Pdb.dll"
+-analyzer:"Assets/Project/Runtime/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Rocks.dll"
 "Assets/Project/Runtime/Input/PlayerControls.cs"
 "Assets/Project/Runtime/Input/StarterAssetsInputs.cs"
 "Assets/Project/Runtime/Scripts/AimCameraScript.cs"
@@ -352,6 +357,7 @@
 "Assets/Project/Runtime/Scripts/ThirdPersonController.cs"
 "Assets/Project/Runtime/Scripts/ThrowTrident.cs"
 "Assets/Project/Runtime/Scripts/Trident.cs"
+"Assets/Project/Runtime/Scripts/WMBNetworkManager.cs"
 -langversion:8.0
 
 /deterministic

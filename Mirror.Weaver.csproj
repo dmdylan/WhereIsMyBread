@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,42 +53,39 @@
     <UnityVersion>2021.1.15f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Processors\SyncVarProcessor.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Readers.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Empty\SyncDictionaryProcessor.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Processors\ServerClientAttributeProcessor.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Extensions.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Processors\NetworkBehaviourProcessor.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\AssemblyInfo.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Weaver.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\WeaverTypes.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Processors\SyncObjectProcessor.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Empty\SyncEventProcessor.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Processors\PropertySiteProcessor.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Processors\ReaderWriterProcessor.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\TypeReferenceComparer.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Empty\SyncListProcessor.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Empty\Program.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Empty\GenericArgumentResolver.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Helpers.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Processors\RpcProcessor.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\WeaverExceptions.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Empty\MessageClassProcessor.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Processors\SyncObjectInitializer.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Processors\TargetRpcProcessor.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Writers.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\CompilationFinishedHook.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Processors\MethodProcessor.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Processors\CommandProcessor.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Processors\MonoBehaviourProcessor.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Resolvers.cs" />
+    <Compile Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Log.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Processors\SyncVarProcessor.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Readers.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Empty\SyncDictionaryProcessor.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Processors\ServerClientAttributeProcessor.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Extensions.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Processors\NetworkBehaviourProcessor.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\AssemblyInfo.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Weaver.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\WeaverTypes.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Processors\SyncObjectProcessor.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Empty\SyncEventProcessor.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Processors\PropertySiteProcessor.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Processors\ReaderWriterProcessor.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\TypeReferenceComparer.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Empty\SyncListProcessor.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Empty\Program.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Empty\GenericArgumentResolver.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Helpers.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Processors\RpcProcessor.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\WeaverExceptions.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Empty\MessageClassProcessor.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Processors\SyncObjectInitializer.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Processors\TargetRpcProcessor.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Writers.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\CompilationFinishedHook.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Processors\MethodProcessor.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Processors\CommandProcessor.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Processors\MonoBehaviourProcessor.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Resolvers.cs" />
-    <Compile Include="Assets\Project\External\Mirror\Editor\Weaver\Log.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Project\External\Mirror\Editor\Weaver\Mirror.Weaver.asmdef" />
+    <None Include="Assets\Project\Runtime\Mirror\Editor\Weaver\Mirror.Weaver.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -328,20 +325,11 @@
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>Z:\Unity\2021.1.15f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Mono.CecilX.Rocks">
-      <HintPath>Assets\Project\External\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Rocks.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.CecilX.Pdb">
-      <HintPath>Assets\Project\External\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Pdb.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.6.1\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
     </Reference>
     <Reference Include="DOTweenEditor">
       <HintPath>Assets\Project\External\DOTween\Editor\DOTweenEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Mono.CecilX">
-      <HintPath>Assets\Project\External\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Mdb">
       <HintPath>Library\PackageCache\com.unity.burst@1.5.4\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll</HintPath>
@@ -370,8 +358,17 @@
     <Reference Include="clipper_library">
       <HintPath>Library\PackageCache\com.unity.cinemachine@2.7.5\Runtime\ThirdParty\clipper_library.dll</HintPath>
     </Reference>
+    <Reference Include="Mono.CecilX">
+      <HintPath>Assets\Project\Runtime\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.CecilX.Mdb">
-      <HintPath>Assets\Project\External\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Mdb.dll</HintPath>
+      <HintPath>Assets\Project\Runtime\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.CecilX.Pdb">
+      <HintPath>Assets\Project\Runtime\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.CecilX.Rocks">
+      <HintPath>Assets\Project\Runtime\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>

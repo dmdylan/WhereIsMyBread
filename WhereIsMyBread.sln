@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWebTransport", "SimpleWebTransport.csproj", "{7288D8FC-39A1-3E82-8FD8-E7D83C4B5BA4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Examples", "Mirror.Examples.csproj", "{BE76916B-F551-C0B0-0923-4247E56DE2D2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror", "Mirror.csproj", "{6C92C088-846A-54AD-27B7-792D76AD77A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Components", "Mirror.Components.csproj", "{67E9AD7A-7A30-8250-EEFD-49D82EABBB2E}"
@@ -41,10 +39,6 @@ Global
 		{7288D8FC-39A1-3E82-8FD8-E7D83C4B5BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7288D8FC-39A1-3E82-8FD8-E7D83C4B5BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7288D8FC-39A1-3E82-8FD8-E7D83C4B5BA4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BE76916B-F551-C0B0-0923-4247E56DE2D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BE76916B-F551-C0B0-0923-4247E56DE2D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BE76916B-F551-C0B0-0923-4247E56DE2D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BE76916B-F551-C0B0-0923-4247E56DE2D2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6C92C088-846A-54AD-27B7-792D76AD77A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6C92C088-846A-54AD-27B7-792D76AD77A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6C92C088-846A-54AD-27B7-792D76AD77A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
