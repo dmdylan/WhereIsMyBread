@@ -8,6 +8,8 @@ public class ThrowTrident : NetworkBehaviour
 {
     [SerializeField] private GameObject tridentPrefab;
     [SerializeField] private Transform tridentSpawnPosition;
+    [SerializeField] private float throwTimer = 2f;
+    private bool canThrow = true;
     private StarterAssetsInputs input;
     private Camera playerCamera;
 
@@ -22,6 +24,8 @@ public class ThrowTrident : NetworkBehaviour
     {
         if (!isLocalPlayer) return;
 
+        if (canThrow == false || input.Aim == false) return;
+
         // Create a ray from the camera going through the middle of your screen
         Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5F, 0.5F, 0));
         // Check whether your are pointing to something so as to adjust the direction
@@ -33,6 +37,7 @@ public class ThrowTrident : NetworkBehaviour
 
         tridentSpawnPosition.LookAt(targetPoint);
 
+        StartCoroutine(ThrowTimer());
         CmdSpawnTrident();
     }
 
@@ -41,5 +46,12 @@ public class ThrowTrident : NetworkBehaviour
     {
         GameObject newTrident = Instantiate(tridentPrefab, tridentSpawnPosition.position, tridentSpawnPosition.rotation);
         NetworkServer.Spawn(newTrident);
+    }
+
+    IEnumerator ThrowTimer()
+    {
+        canThrow = false;
+        yield return new WaitForSeconds(throwTimer);
+        canThrow = true;
     }
 }

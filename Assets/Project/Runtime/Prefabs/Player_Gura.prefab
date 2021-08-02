@@ -312,6 +312,7 @@ MonoBehaviour:
   syncInterval: 0.1
   tridentPrefab: {fileID: 7658206287885011747, guid: 51877b291c6fea64e91727eb162eb121, type: 3}
   tridentSpawnPosition: {fileID: 1406600721676399764}
+  throwTimer: 1.5
 --- !u!1 &1010375371380303023
 GameObject:
   m_ObjectHideFlags: 0

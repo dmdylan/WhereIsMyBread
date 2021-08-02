@@ -22,4 +22,6 @@ public class GameManager : MonoBehaviour
     {
         get { return cinemachineVirtualCameras; }
     }
+
+    //TODO: Get list of all players that join match. Can be used to set other players follow cameras for spectating.
 }

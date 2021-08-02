@@ -19,11 +19,17 @@ public class Trident : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.name);
-        if(collision.gameObject.tag == "Environment" || collision.gameObject.tag == "Bread")
+        if(collision.gameObject.tag == "Environment")
         {
             tridentBody.isKinematic = true;
             tridentBody.velocity = Vector3.zero;
             capsuleCollider.enabled = false;
+        }
+        else if(collision.gameObject.TryGetComponent(out IDamageable damageable))
+        {
+            damageable.TakeDamage();
+            //TODO: Might need to add network component to destory on network side?
+            Destroy(this);
         }
     }
 }
