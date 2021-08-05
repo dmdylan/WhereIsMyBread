@@ -136,6 +136,7 @@ namespace StarterAssets
 			CameraRotation();
 		}
 
+		//TODO: For bread animations, or just make own script?
 		private void AssignAnimationIDs()
 		{
 			_animIDSpeed = Animator.StringToHash("Speed");
