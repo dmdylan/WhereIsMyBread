@@ -23,7 +23,7 @@ namespace StarterAssets
 		public bool cursorLocked = true;
 		public bool cursorInputForLook = true;
 
-		public Vector2 Move => move;
+        public Vector2 Move => move;
 		public Vector2 Look => look;
 		public bool Jump => jump;
 		public bool Sprint => sprint;
