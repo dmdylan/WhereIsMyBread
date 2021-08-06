@@ -15,8 +15,11 @@ namespace BreadStuff
 
         [SerializeField] private int maxHealth = 2;
         [SerializeField] private float damageSpeed = 8f;
+        [SerializeField] private float damagedSpeedTimeBeforeDecay = 2f;
+        [SerializeField] private float damagedSpeedDecayTime = 3f;
 
         private ThirdPersonController controller;
+        private float baseMoveSpeed;
 
         public float DamageSpeed => damageSpeed;
 
@@ -26,6 +29,7 @@ namespace BreadStuff
 
             health = maxHealth;
             controller = GetComponent<ThirdPersonController>();
+            baseMoveSpeed = controller.MoveSpeed;
         }
 
         public virtual void Destroyed()
@@ -51,7 +55,7 @@ namespace BreadStuff
                 Destroyed();
             }
 
-            StartCoroutine(MoveSpeedDecay());
+            StartCoroutine(MoveSpeedDecay(baseMoveSpeed, damageSpeed, damagedSpeedTimeBeforeDecay, damagedSpeedDecayTime));
         }
 
         [Command]
@@ -60,17 +64,22 @@ namespace BreadStuff
             health--;
         }
 
-        IEnumerator MoveSpeedDecay()
+        IEnumerator MoveSpeedDecay(float baseSpeed, float damagedSpeed, float timeBeforeDecay, float decayTime)
         {
-            float temp = controller.MoveSpeed;
-            controller.MoveSpeed = damageSpeed;
+            float timeElapsed = 0f;
+            controller.MoveSpeed = damagedSpeed;
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(timeBeforeDecay);
 
-            while(controller.MoveSpeed >= temp)
+            while (timeElapsed < decayTime)
             {
-                controller.MoveSpeed = Mathf.Lerp(damageSpeed, temp, 3f * Time.deltaTime);
+                controller.MoveSpeed = Mathf.Lerp(damagedSpeed, baseSpeed, timeElapsed / decayTime);
+                timeElapsed += Time.deltaTime;
+
+                yield return null;
             }
+
+            controller.MoveSpeed = baseSpeed;
         }
     }
 }
