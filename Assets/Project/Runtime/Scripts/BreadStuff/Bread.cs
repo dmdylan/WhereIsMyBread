@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace BreadStuff
 {
-    enum BreadState { Moving, Jumping, Dead }
+    public enum BreadState { Grounded, Falling, Dead }
 
     public abstract class Bread : NetworkBehaviour, IDamageable
     {
@@ -18,18 +18,17 @@ namespace BreadStuff
         [SerializeField] private float damagedSpeedTimeBeforeDecay = 2f;
         [SerializeField] private float damagedSpeedDecayTime = 3f;
 
-        private ThirdPersonController controller;
+        private BreadState breadState;
         private float baseMoveSpeed;
 
         public float DamageSpeed => damageSpeed;
+        public BreadState BreadState => breadState;
 
         public override void OnStartLocalPlayer()
         {
             base.OnStartLocalPlayer();
 
             health = maxHealth;
-            controller = GetComponent<ThirdPersonController>();
-            baseMoveSpeed = controller.MoveSpeed;
         }
 
         public virtual void Destroyed()
@@ -41,11 +40,6 @@ namespace BreadStuff
             NetworkServer.Destroy(gameObject);
         }
 
-        void OnThrow()
-        {
-            TakeDamage();
-        }
-
         public virtual void TakeDamage()
         {
             //CmdTakeDamage();
@@ -55,7 +49,12 @@ namespace BreadStuff
                 Destroyed();
             }
 
-            StartCoroutine(MoveSpeedDecay(baseMoveSpeed, damageSpeed, damagedSpeedTimeBeforeDecay, damagedSpeedDecayTime));
+            //StartCoroutine(MoveSpeedDecay(baseMoveSpeed, damageSpeed, damagedSpeedTimeBeforeDecay, damagedSpeedDecayTime));
+        }
+
+        public void SetState(BreadState newState)
+        {
+            breadState = newState;
         }
 
         [Command]
@@ -64,22 +63,22 @@ namespace BreadStuff
             health--;
         }
 
-        IEnumerator MoveSpeedDecay(float baseSpeed, float damagedSpeed, float timeBeforeDecay, float decayTime)
-        {
-            float timeElapsed = 0f;
-            controller.MoveSpeed = damagedSpeed;
-
-            yield return new WaitForSeconds(timeBeforeDecay);
-
-            while (timeElapsed < decayTime)
-            {
-                controller.MoveSpeed = Mathf.Lerp(damagedSpeed, baseSpeed, timeElapsed / decayTime);
-                timeElapsed += Time.deltaTime;
-
-                yield return null;
-            }
-
-            controller.MoveSpeed = baseSpeed;
-        }
+        //IEnumerator MoveSpeedDecay(float baseSpeed, float damagedSpeed, float timeBeforeDecay, float decayTime)
+        //{
+        //    float timeElapsed = 0f;
+        //    controller.MoveSpeed = damagedSpeed;
+        //
+        //    yield return new WaitForSeconds(timeBeforeDecay);
+        //
+        //    while (timeElapsed < decayTime)
+        //    {
+        //        controller.MoveSpeed = Mathf.Lerp(damagedSpeed, baseSpeed, timeElapsed / decayTime);
+        //        timeElapsed += Time.deltaTime;
+        //
+        //        yield return null;
+        //    }
+        //
+        //    controller.MoveSpeed = baseSpeed;
+        //}
     }
 }

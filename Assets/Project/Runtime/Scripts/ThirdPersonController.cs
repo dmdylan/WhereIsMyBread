@@ -228,8 +228,6 @@ namespace StarterAssets
 				transform.rotation = Quaternion.Euler(0f, _targetRotation, 0f);
             }
 
-			//TODO: Add aim move option that makes player face camera/center
-
 			Vector3 targetDirection = Quaternion.Euler(0.0f, _targetRotation, 0.0f) * Vector3.forward;
 
 			// move the player
