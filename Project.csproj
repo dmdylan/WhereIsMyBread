@@ -63,10 +63,11 @@
     <Compile Include="Assets\Project\Runtime\Scripts\WMBNetworkManager.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\IDamageable.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\ThirdPersonController.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\BreadInput.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\AmeBread.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\Bread.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\BreadInput.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\GetVersionNumber.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Project\Runtime\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />

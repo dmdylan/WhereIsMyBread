@@ -352,6 +352,7 @@
 "Assets/Project/Runtime/Scripts/BreadStuff/BreadMovementController.cs"
 "Assets/Project/Runtime/Scripts/CharacterMovement.cs"
 "Assets/Project/Runtime/Scripts/GameManager.cs"
+"Assets/Project/Runtime/Scripts/GetVersionNumber.cs"
 "Assets/Project/Runtime/Scripts/IDamageable.cs"
 "Assets/Project/Runtime/Scripts/PlayerInputController.cs"
 "Assets/Project/Runtime/Scripts/ThirdPersonController.cs"

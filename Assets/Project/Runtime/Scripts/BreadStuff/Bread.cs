@@ -36,7 +36,7 @@ namespace BreadStuff
             //TODO: Disable current gameobject and input. Set camera follow to other players.
             //Be able to cycle through players for spectate.
 
-            //TODO: Add possible 3rd camera for spectate mode.
+            //00TODO: Add possible 3rd camera for spectate mode.
             NetworkServer.Destroy(gameObject);
         }
 
