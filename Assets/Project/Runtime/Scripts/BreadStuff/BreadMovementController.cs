@@ -96,6 +96,7 @@ namespace BreadStuff
 
             targetDirection = Quaternion.Euler(0.0f, targetRotation, 0.0f) * Vector3.forward;
 
+            //TODO: Might be better to set velocity instead?
             playerRigidBody.AddForce(targetDirection * moveSpeed, ForceMode.VelocityChange);
         }
 
