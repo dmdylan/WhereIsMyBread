@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <LangVersion>latest</LangVersion>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -53,11 +53,15 @@
     <UnityVersion>2021.1.15f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Assets\Project\Runtime\Scripts\PlayerInputController.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\Trident.cs" />
     <Compile Include="Assets\Project\Runtime\Input\StarterAssetsInputs.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\BreadMovementController.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\NetworkButtons.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\ThrowTrident.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\AimCameraScript.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\WMBNetworkManager.cs" />
@@ -68,7 +72,6 @@
     <Compile Include="Assets\Project\Runtime\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\AmeBread.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\Bread.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\NetworkButtons.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Project\Runtime\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
