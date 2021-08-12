@@ -51,5 +51,5 @@ public class NetworkButtons : MonoBehaviour
     public void SetNetworkAddress(TMP_InputField inputField)
     {
         networkManager.networkAddress = inputField.text;
-    }
+    } 
 }

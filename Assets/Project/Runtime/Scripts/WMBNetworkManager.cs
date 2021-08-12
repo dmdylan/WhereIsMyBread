@@ -15,6 +15,13 @@ public class WMBNetworkManager : NetworkRoomManager
 #endif
     }
 
+    public override void OnRoomClientConnect(NetworkConnection conn)
+    {
+        base.OnRoomClientConnect(conn);
+        
+
+    }
+
     public override void OnGUI()
     {
         base.OnGUI();
