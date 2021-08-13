@@ -73,19 +73,12 @@
     <Compile Include="Assets\Project\External\3rdPerson+Fly\Scripts\LevelScripts\ThirdPersonOrbitCamBasic.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Project\External\ScriptTemplates\51-Mirror__Network Authenticator-NewNetworkAuthenticator.cs.txt" />
-    <None Include="Assets\Project\External\ScriptTemplates\53-Mirror__Network Observer-NewNetworkObserver.cs.txt" />
     <None Include="Assets\Project\External\Fantasy Skybox FREE\Readme.txt" />
-    <None Include="Assets\Project\External\ScriptTemplates\56-Mirror__Network Discovery-NewNetworkDiscovery.cs.txt" />
     <None Include="Assets\Project\External\DOTween\DOTween.XML" />
     <None Include="Assets\Project\External\DOTween\Editor\DOTweenEditor.dll" />
     <None Include="Assets\Project\External\Project.External.asmdef" />
     <None Include="Assets\Project\External\ParrelSync\VERSION.txt" />
     <None Include="Assets\Project\External\DOTween\DOTween.dll" />
-    <None Include="Assets\Project\External\ScriptTemplates\52-Mirror__Network Behaviour-NewNetworkBehaviour.cs.txt" />
-    <None Include="Assets\Project\External\ScriptTemplates\55-Mirror__Network Room Player-NewNetworkRoomPlayer.cs.txt" />
-    <None Include="Assets\Project\External\ScriptTemplates\50-Mirror__Network Manager-NewNetworkManager.cs.txt" />
-    <None Include="Assets\Project\External\ScriptTemplates\54-Mirror__Network Room Manager-NewNetworkRoomManager.cs.txt" />
     <None Include="Assets\Project\External\DOTween\Editor\DOTweenEditor.XML" />
   </ItemGroup>
   <ItemGroup>
