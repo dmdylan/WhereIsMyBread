@@ -538,6 +538,7 @@ MonoBehaviour:
   playerReadyImage: {fileID: 1028814993400500911}
   playerNotReadyImage: {fileID: 1028814993040031544}
   playerNameText: {fileID: 1028814994458264805}
+  characterChoices: []
 --- !u!1 &1028814993761573493
 GameObject:
   m_ObjectHideFlags: 0
@@ -1081,6 +1082,10 @@ PrefabInstance:
     - target: {fileID: 4325246739328600237, guid: 93221219c8ff0034ebeb57dcf2cedcee, type: 3}
       propertyPath: m_Name
       value: bread
+      objectReference: {fileID: 0}
+    - target: {fileID: 4325246739328600237, guid: 93221219c8ff0034ebeb57dcf2cedcee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 93221219c8ff0034ebeb57dcf2cedcee, type: 3}

@@ -57,8 +57,10 @@
     <Compile Include="Assets\Project\Runtime\Scripts\Trident.cs" />
     <Compile Include="Assets\Project\Runtime\Input\StarterAssetsInputs.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\LobbyPanelUI.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\ScriptableObjects\StringSO.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\BreadMovementController.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\WMBRoomPlayer.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\NetworkButtons.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\ThrowTrident.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\AimCameraScript.cs" />
@@ -70,8 +72,7 @@
     <Compile Include="Assets\Project\Runtime\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\AmeBread.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\Bread.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\WMBRoomPlayer.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\ScriptableObjects\StringSO.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\ScriptableObjects\CharacterListSO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Project\Runtime\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />

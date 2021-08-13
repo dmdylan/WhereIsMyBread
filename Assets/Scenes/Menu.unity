@@ -603,7 +603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 160.01843, y: -75.64899}
+  m_AnchoredPosition: {x: 160.01843, y: -75.63989}
   m_SizeDelta: {x: 170.4, y: 92.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &185839245
@@ -1682,6 +1682,7 @@ MonoBehaviour:
   _allPlayersReady: 0
   roomSlots: []
   clientIndex: 0
+  characterList: {fileID: 11400000, guid: c0d6487411e6b1d45bc9514a4d4a2e8b, type: 2}
 --- !u!114 &575623214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4595,7 +4596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 160.01843, y: -208.32898}
+  m_AnchoredPosition: {x: 160.01843, y: -208.31989}
   m_SizeDelta: {x: 170.4, y: 92.68}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1625733235

@@ -8,6 +8,7 @@ TagManager:
   - Environment
   - Bread
   - Trident
+  - PlayerPanel
   layers:
   - Default
   - TransparentFX

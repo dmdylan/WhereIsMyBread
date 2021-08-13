@@ -5,7 +5,7 @@ public class StringSO : ScriptableObject
 {
     [SerializeField] private string newString;
 
-    public string String
+    public string Value
     {
         get => newString;
         set => newString = value;

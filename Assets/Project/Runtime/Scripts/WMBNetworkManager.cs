@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class WMBNetworkManager : NetworkRoomManager
 {
+    public CharacterListSO characterList;
     bool showStartButton;
 
     public override void OnRoomServerPlayersReady()

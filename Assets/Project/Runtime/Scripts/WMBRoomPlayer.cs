@@ -16,7 +16,8 @@ using System;
 public class WMBRoomPlayer : NetworkRoomPlayer
 {
     public event Action<bool> OnPlayerReadyStatusChanged;
-    public event Action<string> OnPlayerNameChanged; 
+    public event Action<string> OnPlayerNameChanged;
+    public event Action<int> OnPlayerCharacterChanged;
 
     [SerializeField] private GameObject playerUIPanelPrefab;
     public StringSO playerNameSO;
@@ -25,11 +26,8 @@ public class WMBRoomPlayer : NetworkRoomPlayer
     [SyncVar(hook = nameof(PlayerNameChanged))]
     string playerName;
 
-    public string PlayerName
-    {
-        get => playerName;
-        set => playerName = value;
-    }
+    [SyncVar(hook = nameof(PlayerCharacterChanged))]
+    int playerCharacterNumber;
 
     #region Start & Stop Callbacks
 
@@ -50,13 +48,25 @@ public class WMBRoomPlayer : NetworkRoomPlayer
     /// Called on every NetworkBehaviour when it is activated on a client.
     /// <para>Objects on the host have this function called, as there is a local client on the host. The values of SyncVars on object are guaranteed to be initialized correctly with the latest state from the server when this function is called on the client.</para>
     /// </summary>
-    public override void OnStartClient() { }
+    public override void OnStartClient() 
+    {
+        playerUI = Instantiate(playerUIPanelPrefab, GameObject.FindGameObjectWithTag("PlayerPanel").transform);
+
+        playerUI.GetComponent<LobbyPanelUI>().SetPlayer(this, isLocalPlayer);
+
+        OnPlayerReadyStatusChanged?.Invoke(readyToBegin);
+        OnPlayerNameChanged?.Invoke(playerNameSO.Value);
+        OnPlayerCharacterChanged?.Invoke(playerCharacterNumber);
+    }
 
     /// <summary>
     /// This is invoked on clients when the server has caused this object to be destroyed.
     /// <para>This can be used as a hook to invoke effects or do client specific cleanup.</para>
     /// </summary>
-    public override void OnStopClient() { }
+    public override void OnStopClient() 
+    {
+        Destroy(playerUI);
+    }
 
     /// <summary>
     /// Called when the local player object has been set up.
@@ -117,6 +127,11 @@ public class WMBRoomPlayer : NetworkRoomPlayer
     void PlayerNameChanged(string oldName, string newName)
     {
         OnPlayerNameChanged?.Invoke(newName);
+    }
+
+    void PlayerCharacterChanged(int oldCharacterNumber, int newCharacterNumber)
+    {
+
     }
 
     #endregion

@@ -66,4 +66,5 @@ MonoBehaviour:
   showRoomGUI: 1
   readyToBegin: 0
   index: 0
-  playerUIPanel: {fileID: 1028814993712925272, guid: bb6636624d112ab42af5ab3b405769c8, type: 3}
+  playerUIPanelPrefab: {fileID: 1028814993712925272, guid: bb6636624d112ab42af5ab3b405769c8, type: 3}
+  playerNameSO: {fileID: 11400000, guid: 5f172b991e33e3d47a3feee1302cf503, type: 2}

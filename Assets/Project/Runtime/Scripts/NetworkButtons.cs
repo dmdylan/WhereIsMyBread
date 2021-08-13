@@ -6,19 +6,19 @@ using TMPro;
 
 public class NetworkButtons : MonoBehaviour
 {
-    NetworkManager networkManager;
+    WMBNetworkManager wmbNetworkManager;
 
     // Start is called before the first frame update
     void Awake()
     {
-        networkManager = GetComponent<NetworkManager>();
+        wmbNetworkManager = GetComponent<WMBNetworkManager>();
     }
 
     public void StartHostGame()
     {
         if (!NetworkClient.active)
         {
-            networkManager.StartHost();
+            wmbNetworkManager.StartHost();
         }
     }
 
@@ -26,7 +26,7 @@ public class NetworkButtons : MonoBehaviour
     {
         if (!NetworkClient.active)
         {
-            networkManager.StartClient();
+            wmbNetworkManager.StartClient();
             //TODO: Set the network address from the input field
             //networkManager.networkAddress = 
         }
@@ -36,7 +36,7 @@ public class NetworkButtons : MonoBehaviour
     {
         if(NetworkServer.active && NetworkClient.active)
         {
-            networkManager.StopHost();
+            wmbNetworkManager.StopHost();
         }
     }
 
@@ -44,12 +44,17 @@ public class NetworkButtons : MonoBehaviour
     {
         if (NetworkClient.isConnected)
         {
-            networkManager.StopClient();
+            wmbNetworkManager.StopClient();
         }
     }
 
     public void SetNetworkAddress(TMP_InputField inputField)
     {
-        networkManager.networkAddress = inputField.text;
-    } 
+        wmbNetworkManager.networkAddress = inputField.text;
+    }
+    
+    public void SetPlayerName(TMP_InputField inputField)
+    {
+
+    }
 }

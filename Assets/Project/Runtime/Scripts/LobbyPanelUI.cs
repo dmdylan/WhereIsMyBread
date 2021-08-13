@@ -7,6 +7,7 @@ using TMPro;
 public class LobbyPanelUI : MonoBehaviour
 {
     [SerializeField] private GameObject characterSelectButtons;
+    //[SerializeField] private GameObject 
     [SerializeField] private GameObject playerReadyImage;
     [SerializeField] private GameObject playerNotReadyImage;
     [SerializeField] private TextMeshProUGUI playerNameText;
