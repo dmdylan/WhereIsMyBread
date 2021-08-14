@@ -20,14 +20,30 @@ public class WMBRoomPlayer : NetworkRoomPlayer
     public event Action<int> OnPlayerCharacterChanged;
 
     [SerializeField] private GameObject playerUIPanelPrefab;
+    [SerializeField] private GameObject playerUIButtonsPrefab;
     public StringSO playerNameSO;
-    private GameObject playerUI;
+    private GameObject playerUIPanel;
+    private GameObject playerUIButtons;
 
     [SyncVar(hook = nameof(PlayerNameChanged))]
     string playerName;
 
     [SyncVar(hook = nameof(PlayerCharacterChanged))]
     int playerCharacterNumber;
+
+    //TODO: Not getting called on the host client
+    public void ChangeReadyStatus(bool playerReadyStatus)
+    { 
+        if(NetworkClient.active && isLocalPlayer)
+        {
+            CmdChangeReadyState(playerReadyStatus);
+            Debug.Log(playerReadyStatus);
+        }
+        else if (NetworkClient.isHostClient)
+        {
+            CmdChangeReadyState(playerReadyStatus);
+        }
+    }
 
     #region Start & Stop Callbacks
 
@@ -50,9 +66,11 @@ public class WMBRoomPlayer : NetworkRoomPlayer
     /// </summary>
     public override void OnStartClient() 
     {
-        playerUI = Instantiate(playerUIPanelPrefab, GameObject.FindGameObjectWithTag("PlayerPanel").transform);
+        playerUIPanel = Instantiate(playerUIPanelPrefab, GameObject.FindGameObjectWithTag("PlayerPanel").transform);
+        playerUIButtons = Instantiate(playerUIButtonsPrefab, GameObject.Find("Canvas").transform);
 
-        playerUI.GetComponent<LobbyPanelUI>().SetPlayer(this, isLocalPlayer);
+        playerUIPanel.GetComponent<LobbyPanelUI>().SetPlayer(this, isLocalPlayer);
+        playerUIButtons.GetComponent<LobbyButtonsUI>().SetPlayer(this, isLocalPlayer);
 
         OnPlayerReadyStatusChanged?.Invoke(readyToBegin);
         OnPlayerNameChanged?.Invoke(playerNameSO.Value);
@@ -65,7 +83,7 @@ public class WMBRoomPlayer : NetworkRoomPlayer
     /// </summary>
     public override void OnStopClient() 
     {
-        Destroy(playerUI);
+        Destroy(playerUIPanel);
     }
 
     /// <summary>

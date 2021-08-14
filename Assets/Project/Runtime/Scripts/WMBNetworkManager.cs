@@ -1,8 +1,10 @@
 using Mirror;
+using System;
 using UnityEngine;
 
 public class WMBNetworkManager : NetworkRoomManager
 {
+    public event Action<bool> OnPlayersReadyStatusChanged;
     public CharacterListSO characterList;
     bool showStartButton;
 
@@ -13,6 +15,17 @@ public class WMBNetworkManager : NetworkRoomManager
             base.OnRoomServerPlayersReady();
 #else
         showStartButton = true;
+        OnPlayersReadyStatusChanged?.Invoke(true);
+#endif
+    }
+
+    public override void OnRoomServerPlayersNotReady()
+    {
+#if UNITY_SERVER
+            base.OnRoomServerPlayersNotReady();
+#else
+        showStartButton = false;
+        OnPlayersReadyStatusChanged?.Invoke(false);
 #endif
     }
 

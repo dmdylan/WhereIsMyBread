@@ -7,17 +7,18 @@ using TMPro;
 public class LobbyPanelUI : MonoBehaviour
 {
     [SerializeField] private GameObject characterSelectButtons;
-    //[SerializeField] private GameObject 
     [SerializeField] private GameObject playerReadyImage;
     [SerializeField] private GameObject playerNotReadyImage;
     [SerializeField] private TextMeshProUGUI playerNameText;
     [SerializeField] private GameObject[] characterChoices;
 
     WMBRoomPlayer player;
+    bool isLocalPlayer;
 
     public void SetPlayer(WMBRoomPlayer player, bool isLocalPlayer)
     {
         this.player = player;
+        this.isLocalPlayer = isLocalPlayer;
 
         player.OnPlayerReadyStatusChanged += Player_OnPlayerReadyStatusChanged;
         player.OnPlayerNameChanged += Player_OnPlayerNameChanged;
@@ -45,11 +46,17 @@ public class LobbyPanelUI : MonoBehaviour
         {
             playerNotReadyImage.SetActive(true);
             playerReadyImage.SetActive(false);
+
+            if(isLocalPlayer)
+                characterSelectButtons.SetActive(true);
         }
         else if(readyStatus == true)
         {
             playerNotReadyImage.SetActive(false);
             playerReadyImage.SetActive(true);
+
+            if(isLocalPlayer)
+                characterSelectButtons.SetActive(false);
         }
     }
 }
