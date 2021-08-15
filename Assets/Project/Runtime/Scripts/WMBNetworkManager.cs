@@ -32,7 +32,7 @@ public class WMBNetworkManager : NetworkRoomManager
     public override void OnRoomClientConnect(NetworkConnection conn)
     {
         base.OnRoomClientConnect(conn);
-        
+
     }
 
     //public override void OnGUI()
@@ -48,3 +48,11 @@ public class WMBNetworkManager : NetworkRoomManager
     //    }
     //}
 }
+
+public struct PlayerCreationMessage : NetworkMessage
+{
+
+}
+
+public enum CharacterChoice { }
+

@@ -21,9 +21,10 @@ public class WMBRoomPlayer : NetworkRoomPlayer
 
     [SerializeField] private GameObject playerUIPanelPrefab;
     [SerializeField] private GameObject playerUIButtonsPrefab;
-    public StringSO playerNameSO;
+    [SerializeField] private GameObject playerNamePanelPrefab;
     private GameObject playerUIPanel;
     private GameObject playerUIButtons;
+    private GameObject playerNamePanelUI;
 
     [SyncVar(hook = nameof(PlayerNameChanged))]
     string playerName;
@@ -31,18 +32,44 @@ public class WMBRoomPlayer : NetworkRoomPlayer
     [SyncVar(hook = nameof(PlayerCharacterChanged))]
     int playerCharacterNumber;
 
-    //TODO: Not getting called on the host client
     public void ChangeReadyStatus(bool playerReadyStatus)
     { 
         if(NetworkClient.active && isLocalPlayer)
         {
             CmdChangeReadyState(playerReadyStatus);
-            Debug.Log(playerReadyStatus);
         }
         else if (NetworkClient.isHostClient)
         {
             CmdChangeReadyState(playerReadyStatus);
         }
+    }
+
+    public void ChangePlayerName(string newName)
+    {
+        if(NetworkClient.active && isLocalPlayer)
+        {
+            CmdChangeName(newName);
+        }
+    }
+
+    [Command]
+    private void CmdChangeName(string newName)
+    {
+        playerName = newName;
+    }
+
+    public void ChangePlayerCharacterNumber(int newCharacter)
+    {
+        if(NetworkClient.active && isLocalPlayer)
+        {
+            CmdChangeCharacter(newCharacter);
+        }
+    }
+
+    [Command]
+    private void CmdChangeCharacter(int newCharacter)
+    {
+        playerCharacterNumber = newCharacter;
     }
 
     #region Start & Stop Callbacks
@@ -67,17 +94,17 @@ public class WMBRoomPlayer : NetworkRoomPlayer
     public override void OnStartClient() 
     {
         playerUIPanel = Instantiate(playerUIPanelPrefab, GameObject.FindGameObjectWithTag("PlayerPanel").transform);
+        playerUIPanel.GetComponent<LobbyPanelUI>().SetPlayer(this, isLocalPlayer, playerName);
 
         if (isLocalPlayer)
         {
+            playerNamePanelUI = Instantiate(playerNamePanelPrefab, GameObject.Find("Canvas").transform);
+            playerNamePanelUI.GetComponent<PlayerNamePanelUI>().PlayerSetup(this);
             playerUIButtons = Instantiate(playerUIButtonsPrefab, GameObject.Find("Canvas").transform);
             playerUIButtons.GetComponent<LobbyButtonsUI>().SetPlayer(this, isLocalPlayer);
         }
 
-        playerUIPanel.GetComponent<LobbyPanelUI>().SetPlayer(this, isLocalPlayer);
-
         OnPlayerReadyStatusChanged?.Invoke(readyToBegin);
-        OnPlayerNameChanged?.Invoke(playerNameSO.Value);
         OnPlayerCharacterChanged?.Invoke(playerCharacterNumber);
     }
 
@@ -153,7 +180,7 @@ public class WMBRoomPlayer : NetworkRoomPlayer
 
     void PlayerCharacterChanged(int oldCharacterNumber, int newCharacterNumber)
     {
-
+        OnPlayerCharacterChanged?.Invoke(newCharacterNumber);
     }
 
     #endregion

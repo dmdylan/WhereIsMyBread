@@ -68,4 +68,4 @@ MonoBehaviour:
   index: 0
   playerUIPanelPrefab: {fileID: 1028814993712925272, guid: bb6636624d112ab42af5ab3b405769c8, type: 3}
   playerUIButtonsPrefab: {fileID: 2072745313555991005, guid: e34523778c41bd843aafe79547cf1730, type: 3}
-  playerNameSO: {fileID: 11400000, guid: 5f172b991e33e3d47a3feee1302cf503, type: 2}
+  playerNamePanelPrefab: {fileID: 8320844765069560472, guid: 02cd06acde31ad04e9ca9415f2800bed, type: 3}

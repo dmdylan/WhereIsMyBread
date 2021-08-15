@@ -7,7 +7,6 @@ using TMPro;
 public class NetworkButtons : MonoBehaviour
 {
     WMBNetworkManager wmbNetworkManager;
-    public StringSO playerName;
 
     // Start is called before the first frame update
     void Awake()
@@ -56,6 +55,6 @@ public class NetworkButtons : MonoBehaviour
     
     public void SetPlayerName(TMP_InputField inputField)
     {
-        playerName.Value = inputField.text;
+        //playerName.PlayerName = inputField.text;
     }
 }
