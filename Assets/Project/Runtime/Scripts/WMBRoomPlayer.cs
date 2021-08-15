@@ -67,10 +67,14 @@ public class WMBRoomPlayer : NetworkRoomPlayer
     public override void OnStartClient() 
     {
         playerUIPanel = Instantiate(playerUIPanelPrefab, GameObject.FindGameObjectWithTag("PlayerPanel").transform);
-        playerUIButtons = Instantiate(playerUIButtonsPrefab, GameObject.Find("Canvas").transform);
+
+        if (isLocalPlayer)
+        {
+            playerUIButtons = Instantiate(playerUIButtonsPrefab, GameObject.Find("Canvas").transform);
+            playerUIButtons.GetComponent<LobbyButtonsUI>().SetPlayer(this, isLocalPlayer);
+        }
 
         playerUIPanel.GetComponent<LobbyPanelUI>().SetPlayer(this, isLocalPlayer);
-        playerUIButtons.GetComponent<LobbyButtonsUI>().SetPlayer(this, isLocalPlayer);
 
         OnPlayerReadyStatusChanged?.Invoke(readyToBegin);
         OnPlayerNameChanged?.Invoke(playerNameSO.Value);
@@ -154,12 +158,12 @@ public class WMBRoomPlayer : NetworkRoomPlayer
 
     #endregion
 
-    #region Optional UI
-
-    public override void OnGUI()
-    {
-        base.OnGUI();
-    }
-
-    #endregion
+    //#region Optional UI
+    //
+    //public override void OnGUI()
+    //{
+    //    base.OnGUI();
+    //}
+    //
+    //#endregion
 }

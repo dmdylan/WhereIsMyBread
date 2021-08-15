@@ -56,6 +56,7 @@
     <Compile Include="Assets\Project\Runtime\Scripts\PlayerInputController.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\Trident.cs" />
     <Compile Include="Assets\Project\Runtime\Input\StarterAssetsInputs.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\LobbyButtonsUI.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\LobbyPanelUI.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\ScriptableObjects\StringSO.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\BreadMovementController.cs" />
@@ -68,13 +69,13 @@
     <Compile Include="Assets\Project\Runtime\Scripts\WMBNetworkManager.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\GetVersionNumber.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\IDamageable.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\LobbyManager.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\ThirdPersonController.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\BreadInput.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\AmeBread.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\Bread.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\LobbyManager.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\LobbyButtonsUI.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\ScriptableObjects\PlayerInfoSO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Project\Runtime\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
