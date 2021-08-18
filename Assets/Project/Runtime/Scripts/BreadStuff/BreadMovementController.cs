@@ -44,10 +44,10 @@ namespace BreadStuff
         {
             base.OnStartLocalPlayer();
             playerRigidBody = GetComponent<Rigidbody>();
-            SetBreadCameras();
             playerCamera = Camera.main;
             breadInput = GetComponent<BreadInput>();
             bread = GetComponent<Bread>();
+            SetBreadCameras();
             StartCoroutine(GroundCheck());
         }
 

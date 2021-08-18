@@ -5183,6 +5183,22 @@ PrefabInstance:
       propertyPath: playerName
       value: 
       objectReference: {fileID: 11400000, guid: 8b0e0ea1a115b644382b30f875ca72c5, type: 2}
+    - target: {fileID: 3336405230278582474, guid: 4d7967eff9c97a843ac3bf3975fa393f, type: 3}
+      propertyPath: GameplayScene
+      value: Assets/Scenes/MainGame.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336405230278582474, guid: 4d7967eff9c97a843ac3bf3975fa393f, type: 3}
+      propertyPath: autoCreatePlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336405230278582474, guid: 4d7967eff9c97a843ac3bf3975fa393f, type: 3}
+      propertyPath: spawnPrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336405230278582474, guid: 4d7967eff9c97a843ac3bf3975fa393f, type: 3}
+      propertyPath: spawnPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 6189780678400777628, guid: fd1503d8b9fa7154e954109c8869850c, type: 3}
     - target: {fileID: 3336405230278582475, guid: 4d7967eff9c97a843ac3bf3975fa393f, type: 3}
       propertyPath: m_RootOrder
       value: 2

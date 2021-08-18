@@ -33,7 +33,18 @@ public class WMBRoomPlayer : NetworkRoomPlayer
     int playerCharacterNumber;
 
     public void ChangeReadyStatus(bool playerReadyStatus)
-    { 
+    {
+        if(playerReadyStatus == true && !WMBNetworkManager.players.ContainsKey(netIdentity.netId))
+        {
+            WMBNetworkManager.players.Add(netIdentity.netId, new PlayerInfo(netIdentity.connectionToClient, playerName, playerCharacterNumber));
+        }
+        else if (playerReadyStatus == true && WMBNetworkManager.players.ContainsKey(netIdentity.netId))
+        {
+            PlayerInfo info = WMBNetworkManager.players[netIdentity.netId];
+            info.CharacterChoice = playerCharacterNumber;
+            WMBNetworkManager.players[netIdentity.netId] = info;
+        }
+
         if(NetworkClient.active && isLocalPlayer)
         {
             CmdChangeReadyState(playerReadyStatus);

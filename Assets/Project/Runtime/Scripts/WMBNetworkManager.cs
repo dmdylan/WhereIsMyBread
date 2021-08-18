@@ -1,12 +1,15 @@
 using Mirror;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WMBNetworkManager : NetworkRoomManager
 {
+    //TODO: Be sure to clear/deque list when client leaves or server stops
+    public static Dictionary<uint, PlayerInfo> players;
     public event Action<bool> OnPlayersReadyStatusChanged;
     public CharacterListSO characterList;
-    bool showStartButton;
 
     public override void OnRoomServerPlayersReady()
     {
@@ -14,7 +17,6 @@ public class WMBNetworkManager : NetworkRoomManager
 #if UNITY_SERVER
             base.OnRoomServerPlayersReady();
 #else
-        showStartButton = true;
         OnPlayersReadyStatusChanged?.Invoke(true);
 #endif
     }
@@ -24,7 +26,6 @@ public class WMBNetworkManager : NetworkRoomManager
 #if UNITY_SERVER
             base.OnRoomServerPlayersNotReady();
 #else
-        showStartButton = false;
         OnPlayersReadyStatusChanged?.Invoke(false);
 #endif
     }
@@ -35,24 +36,61 @@ public class WMBNetworkManager : NetworkRoomManager
 
     }
 
-    //public override void OnGUI()
+    //TODO: Might need to even do this. Might be able to auto set player prefab prior to joining if it doesn't impact all
+    //clients connected to the host/network manager.
+
+    //TODO: If still autocreate, need way to change spawn positions for bread/gura
+    public override void OnRoomStartServer()
+    {
+        base.OnRoomStartServer();
+
+        players = new Dictionary<uint, PlayerInfo>();
+    }
+
+    //TODO: Use OnRoomServerAddPlayer
+
+    //public override void OnRoomServerAddPlayer(NetworkConnection conn)
     //{
-    //    base.OnGUI();
-    //
-    //    if (allPlayersReady && showStartButton && GUI.Button(new Rect(150, 300, 120, 20), "START GAME"))
-    //    {
-    //        // set to false to hide it in the game scene
-    //        showStartButton = false;
-    //
-    //        ServerChangeScene(GameplayScene);
-    //    }
+    //    NetworkServer.ReplacePlayerForConnection(conn, Instantiate(characterList.Characters[1]));//players[(uint)conn.connectionId].CharacterChoice]));
+    //    //base.OnRoomServerAddPlayer(conn);
     //}
+
+    public override void OnServerChangeScene(string newSceneName)
+    {
+        if(newSceneName == GameplayScene)
+        {
+            foreach (var player in players)
+            {
+                //if (NetworkServer.active)
+                //{
+                NetworkServer.ReplacePlayerForConnection(player.Value.Conn, Instantiate(characterList.Characters[1]));//player.Value.CharacterChoice]));
+                //}
+            }
+        }
+    
+        base.OnServerChangeScene(newSceneName);
+    }
 }
 
-public struct PlayerCreationMessage : NetworkMessage
+public struct PlayerInfo
 {
+    private NetworkConnection conn;
+    private string playerName;
+    private int characterChoice;
 
+    public PlayerInfo(NetworkConnection conn, string playerName, int characterChoice)
+    {
+        this.conn = conn;
+        this.playerName = playerName;
+        this.characterChoice = characterChoice;
+    }
+
+    public NetworkConnection Conn => conn;
+    public string PlayerName => playerName;
+    public int CharacterChoice
+    {
+        get => characterChoice;
+        set => characterChoice = value;
+    }
 }
-
-public enum CharacterChoice { }
 
