@@ -34,15 +34,9 @@ public class WMBRoomPlayer : NetworkRoomPlayer
 
     public void ChangeReadyStatus(bool playerReadyStatus)
     {
-        if(playerReadyStatus == true && !WMBNetworkManager.players.ContainsKey(netIdentity.netId))
+        if(playerReadyStatus == true && isLocalPlayer)
         {
-            WMBNetworkManager.players.Add(netIdentity.netId, new PlayerInfo(netIdentity.connectionToClient, playerName, playerCharacterNumber));
-        }
-        else if (playerReadyStatus == true && WMBNetworkManager.players.ContainsKey(netIdentity.netId))
-        {
-            PlayerInfo info = WMBNetworkManager.players[netIdentity.netId];
-            info.CharacterChoice = playerCharacterNumber;
-            WMBNetworkManager.players[netIdentity.netId] = info;
+            CmdUpdatePlayerInfo();
         }
 
         if(NetworkClient.active && isLocalPlayer)
@@ -81,6 +75,15 @@ public class WMBRoomPlayer : NetworkRoomPlayer
     private void CmdChangeCharacter(int newCharacter)
     {
         playerCharacterNumber = newCharacter;
+    }
+
+    //TODO: Playername is never updated in player info
+    [Command]
+    private void CmdUpdatePlayerInfo()
+    {
+        PlayerInfo info = WMBNetworkManager.players[connectionToClient.connectionId];
+        info.CharacterChoice = playerCharacterNumber;
+        WMBNetworkManager.players[connectionToClient.connectionId] = info;
     }
 
     #region Start & Stop Callbacks

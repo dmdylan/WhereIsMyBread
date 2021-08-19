@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class WMBNetworkManager : NetworkRoomManager
 {
     //TODO: Be sure to clear/deque list when client leaves or server stops
-    public static Dictionary<uint, PlayerInfo> players;
+    public static Dictionary<int, PlayerInfo> players;
     public event Action<bool> OnPlayersReadyStatusChanged;
     public CharacterListSO characterList;
 
@@ -30,10 +30,17 @@ public class WMBNetworkManager : NetworkRoomManager
 #endif
     }
 
-    public override void OnRoomClientConnect(NetworkConnection conn)
+    public override void OnRoomServerConnect(NetworkConnection conn)
     {
-        base.OnRoomClientConnect(conn);
+        base.OnRoomServerConnect(conn);
+        players.Add(conn.connectionId, new PlayerInfo());
+        Debug.Log(players.Count);
+    }
 
+    public override void OnRoomServerDisconnect(NetworkConnection conn)
+    {
+        base.OnRoomClientDisconnect(conn);
+        players.Remove(conn.connectionId);
     }
 
     //TODO: Might need to even do this. Might be able to auto set player prefab prior to joining if it doesn't impact all
@@ -44,32 +51,16 @@ public class WMBNetworkManager : NetworkRoomManager
     {
         base.OnRoomStartServer();
 
-        players = new Dictionary<uint, PlayerInfo>();
+        players = new Dictionary<int, PlayerInfo>();
     }
 
-    //TODO: Use OnRoomServerAddPlayer
-
-    //public override void OnRoomServerAddPlayer(NetworkConnection conn)
-    //{
-    //    NetworkServer.ReplacePlayerForConnection(conn, Instantiate(characterList.Characters[1]));//players[(uint)conn.connectionId].CharacterChoice]));
-    //    //base.OnRoomServerAddPlayer(conn);
-    //}
-
-    public override void OnServerChangeScene(string newSceneName)
+    public override GameObject OnRoomServerCreateGamePlayer(NetworkConnection conn, GameObject roomPlayer)
     {
-        if(newSceneName == GameplayScene)
-        {
-            foreach (var player in players)
-            {
-                //if (NetworkServer.active)
-                //{
-                NetworkServer.ReplacePlayerForConnection(player.Value.Conn, Instantiate(characterList.Characters[1]));//player.Value.CharacterChoice]));
-                //}
-            }
-        }
-    
-        base.OnServerChangeScene(newSceneName);
+        //Instantiate new player gameobject to be spawned by the server on scene change
+        roomPlayer = Instantiate(characterList.Characters[players[conn.connectionId].CharacterChoice]);
+        return roomPlayer;
     }
+
 }
 
 public struct PlayerInfo
@@ -86,7 +77,13 @@ public struct PlayerInfo
     }
 
     public NetworkConnection Conn => conn;
-    public string PlayerName => playerName;
+
+    public string PlayerName
+    {
+        get => playerName;
+        set => playerName = value;
+    }
+
     public int CharacterChoice
     {
         get => characterChoice;
