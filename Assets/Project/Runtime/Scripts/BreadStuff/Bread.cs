@@ -14,14 +14,14 @@ namespace BreadStuff
         [SerializeField] protected int health;
 
         [SerializeField] private int maxHealth = 2;
-        [SerializeField] private float damageSpeed = 8f;
-        [SerializeField] private float damagedSpeedTimeBeforeDecay = 2f;
-        [SerializeField] private float damagedSpeedDecayTime = 3f;
+        //[SerializeField] private float damageSpeed = 8f;
+        //[SerializeField] private float damagedSpeedTimeBeforeDecay = 2f;
+        //[SerializeField] private float damagedSpeedDecayTime = 3f;
 
         private BreadState breadState;
-        private float baseMoveSpeed;
-
-        public float DamageSpeed => damageSpeed;
+        //private float baseMoveSpeed;
+        //
+        //public float DamageSpeed => damageSpeed;
         public BreadState BreadState => breadState;
 
         public override void OnStartLocalPlayer()

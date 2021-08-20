@@ -56,17 +56,16 @@ namespace BreadStuff
             if (!isLocalPlayer) return;
 
             Jump();
+            Move();
         }
 
         private void FixedUpdate()
         {
             if (!isLocalPlayer) return;
 
-            Move();
-
             if(bread.BreadState == BreadState.Falling)
             {
-                playerRigidBody.AddForce(Vector3.down * downForce, ForceMode.VelocityChange);
+                //playerRigidBody.AddForce(Vector3.down * downForce, ForceMode.VelocityChange);
             }
         }
 
@@ -97,7 +96,8 @@ namespace BreadStuff
             targetDirection = Quaternion.Euler(0.0f, targetRotation, 0.0f) * Vector3.forward;
 
             //TODO: Might be better to set velocity instead?
-            playerRigidBody.AddForce(targetDirection * moveSpeed, ForceMode.VelocityChange);
+            //playerRigidBody.AddForce(targetDirection * moveSpeed, ForceMode.VelocityChange);
+            playerRigidBody.MovePosition(transform.position + (targetDirection * moveSpeed * Time.deltaTime));
         }
 
         private void Jump()
