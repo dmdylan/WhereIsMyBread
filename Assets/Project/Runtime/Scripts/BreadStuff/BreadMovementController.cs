@@ -14,12 +14,13 @@ namespace BreadStuff
         [Range(0.0f, 0.3f)]
         [SerializeField] private float rotationSmoothTime = 0.12f;
         [SerializeField] private float jumpForce = 1f;
-        [SerializeField] private float groundDrag = 5f;
-        [SerializeField] private float airDrag = 0f;
-        [SerializeField] private float downForce = 1f;
+        [SerializeField] private LayerMask layerMask;
+        [SerializeField] private float wallCheckSphereRadius = .2f;
+        [SerializeField] private float wallCheckSphereDistance = .1f;
 
         [Header("Camera")]
         [SerializeField] private GameObject cameraFollowTarget;
+        [SerializeField] private float cameraMoveSpeed = 1f;
         [SerializeField] private float topClamp = 70.0f;
         [SerializeField] private float bottomClamp = -30.0f;
         [SerializeField] private float cameraAngleOverride = 0.0f;
@@ -28,6 +29,7 @@ namespace BreadStuff
         [SerializeField] private float groundCheckRadius = 1f;
         [SerializeField] private LayerMask groundLayers;
 
+        private Animator animator;
         private Rigidbody playerRigidBody;
         private Camera playerCamera;
         private BreadInput breadInput;
@@ -47,6 +49,7 @@ namespace BreadStuff
             playerCamera = Camera.main;
             breadInput = GetComponent<BreadInput>();
             bread = GetComponent<Bread>();
+            animator = GetComponent<Animator>();
             SetBreadCameras();
             StartCoroutine(GroundCheck());
         }
@@ -63,11 +66,6 @@ namespace BreadStuff
 
             Move();
             Jump();
-
-            if(bread.BreadState == BreadState.Falling)
-            {
-                //playerRigidBody.AddForce(Vector3.down * downForce, ForceMode.VelocityChange);
-            }
         }
 
         //_animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime* SpeedChangeRate);
@@ -90,7 +88,6 @@ namespace BreadStuff
                 float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref _rotationVelocity, rotationSmoothTime);
 
                 // rotate to face input direction relative to camera position
-                //transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
                 playerRigidBody.MoveRotation(Quaternion.Euler(0.0f, rotation, 0.0f));
             }
 
@@ -99,8 +96,10 @@ namespace BreadStuff
             //Forward movement direction based on which direction the body is facing
             targetDirection = Quaternion.Euler(0.0f, targetRotation, 0.0f) * Vector3.forward;
 
-            //TODO: Might be better to set velocity instead?
-            //playerRigidBody.AddForce(targetDirection * moveSpeed, ForceMode.VelocityChange);
+            //Check if there is a wall right in front of us
+            if (Physics.SphereCast(transform.position, wallCheckSphereRadius, targetDirection, out _, wallCheckSphereDistance, layerMask))
+                return;
+
             playerRigidBody.MovePosition(playerRigidBody.position + (targetDirection * moveSpeed * Time.deltaTime));
         }
 
@@ -118,8 +117,8 @@ namespace BreadStuff
             // if there is an input and camera position is not fixed
             if (breadInput.LookInput.sqrMagnitude >= threshold)
             {
-                cinemachineTargetYaw += breadInput.LookInput.x * Time.deltaTime;
-                cinemachineTargetPitch += breadInput.LookInput.y * Time.deltaTime;
+                cinemachineTargetYaw += breadInput.LookInput.x * cameraMoveSpeed * Time.deltaTime;
+                cinemachineTargetPitch += breadInput.LookInput.y * cameraMoveSpeed  * Time.deltaTime;
             }
 
             // clamp our rotations so our values are limited 360 degrees
@@ -141,13 +140,6 @@ namespace BreadStuff
             StartCoroutine(GroundCheck());
         }
 
-        IEnumerator SetDrag()
-        {
-            playerRigidBody.drag = airDrag;
-            yield return new WaitUntil(() => bread.BreadState == BreadState.Grounded);
-            playerRigidBody.drag = groundDrag;
-        }
-
         private static float ClampAngle(float lfAngle, float lfMin, float lfMax)
         {
             if (lfAngle < -360f) lfAngle += 360f;
@@ -162,8 +154,8 @@ namespace BreadStuff
 
         private void SetBreadCameras()
         {
-            GameManager.Instance.CinemachineVirtualCameras[3].Follow = cameraFollowTarget.transform;
-            GameManager.Instance.CinemachineVirtualCameras[3].LookAt = cameraFollowTarget.transform;
+            GameManager.Instance.CinemachineVirtualCameras[2].Follow = cameraFollowTarget.transform;
+            GameManager.Instance.CinemachineVirtualCameras[2].LookAt = cameraFollowTarget.transform;
         }
 
         private void OnDrawGizmosSelected()
