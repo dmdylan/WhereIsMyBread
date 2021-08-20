@@ -55,13 +55,14 @@ namespace BreadStuff
         {
             if (!isLocalPlayer) return;
 
-            Jump();
-            Move();
         }
 
         private void FixedUpdate()
         {
             if (!isLocalPlayer) return;
+
+            Move();
+            Jump();
 
             if(bread.BreadState == BreadState.Falling)
             {
@@ -84,20 +85,23 @@ namespace BreadStuff
 
             if (breadInput.MoveInput != Vector2.zero)
             {
+                //Get the angle of input based on the camera direction
                 targetRotation = Mathf.Atan2(breadInput.MoveInput.x, breadInput.MoveInput.y) * Mathf.Rad2Deg + playerCamera.transform.eulerAngles.y;
                 float rotation = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref _rotationVelocity, rotationSmoothTime);
 
                 // rotate to face input direction relative to camera position
-                transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
+                //transform.rotation = Quaternion.Euler(0.0f, rotation, 0.0f);
+                playerRigidBody.MoveRotation(Quaternion.Euler(0.0f, rotation, 0.0f));
             }
 
             if (breadInput.MoveInput == Vector2.zero) return;
 
+            //Forward movement direction based on which direction the body is facing
             targetDirection = Quaternion.Euler(0.0f, targetRotation, 0.0f) * Vector3.forward;
 
             //TODO: Might be better to set velocity instead?
             //playerRigidBody.AddForce(targetDirection * moveSpeed, ForceMode.VelocityChange);
-            playerRigidBody.MovePosition(transform.position + (targetDirection * moveSpeed * Time.deltaTime));
+            playerRigidBody.MovePosition(playerRigidBody.position + (targetDirection * moveSpeed * Time.deltaTime));
         }
 
         private void Jump()
@@ -158,7 +162,8 @@ namespace BreadStuff
 
         private void SetBreadCameras()
         {
-            GameManager.Instance.CinemachineVirtualCameras[2].Follow = cameraFollowTarget.transform;
+            GameManager.Instance.CinemachineVirtualCameras[3].Follow = cameraFollowTarget.transform;
+            GameManager.Instance.CinemachineVirtualCameras[3].LookAt = cameraFollowTarget.transform;
         }
 
         private void OnDrawGizmosSelected()

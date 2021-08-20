@@ -304,10 +304,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  moveSpeed: 1
+  moveSpeed: 5
   groundCheck: {fileID: 4434079630376113183}
   rotationSmoothTime: 0.12
-  jumpForce: 1
+  jumpForce: 0.3
   groundDrag: 5
   airDrag: 0
   downForce: 1
