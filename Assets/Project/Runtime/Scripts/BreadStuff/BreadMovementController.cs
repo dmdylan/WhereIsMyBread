@@ -1,4 +1,5 @@
 using Mirror;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -29,18 +30,25 @@ namespace BreadStuff
         [SerializeField] private float groundCheckRadius = 1f;
         [SerializeField] private LayerMask groundLayers;
 
+        //Animation stuff
         private Animator animator;
-        private Rigidbody playerRigidBody;
+        private int runningID;
+        private int jumpingID;
+
+        //Camera and movement
         private Camera playerCamera;
-        private BreadInput breadInput;
-        private Bread bread;
-        private Vector3 targetDirection;
         private const float threshold = 0.01f;
         private float cinemachineTargetYaw;
         private float cinemachineTargetPitch;
+        private Vector3 targetDirection;
         private float targetRotation;
         private float _rotationVelocity;
         private bool isGrounded;
+
+        //Misc
+        private Rigidbody playerRigidBody;
+        private BreadInput breadInput;
+        private Bread bread;
 
         public override void OnStartLocalPlayer()
         {
@@ -51,6 +59,7 @@ namespace BreadStuff
             bread = GetComponent<Bread>();
             animator = GetComponent<Animator>();
             SetBreadCameras();
+            SetAnimatorHash();
             StartCoroutine(GroundCheck());
         }
 
@@ -67,8 +76,6 @@ namespace BreadStuff
             Move();
             Jump();
         }
-
-        //_animationBlend = Mathf.Lerp(_animationBlend, targetSpeed, Time.deltaTime* SpeedChangeRate);
 
         private void LateUpdate()
         {
@@ -108,6 +115,7 @@ namespace BreadStuff
             if (breadInput.IsJumping == true && isGrounded == true)
             {
                 playerRigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                animator.SetTrigger(jumpingID);
                 bread.SetState(BreadState.Falling);
             }
         }
@@ -127,6 +135,12 @@ namespace BreadStuff
 
             // Cinemachine will follow this target
             cameraFollowTarget.transform.rotation = Quaternion.Euler(cinemachineTargetPitch + cameraAngleOverride, cinemachineTargetYaw, 0.0f);
+        }
+
+        private void SetAnimatorHash()
+        {
+            runningID = Animator.StringToHash("isRunning");
+            jumpingID = Animator.StringToHash("jumped");
         }
 
         private IEnumerator GroundCheck()
