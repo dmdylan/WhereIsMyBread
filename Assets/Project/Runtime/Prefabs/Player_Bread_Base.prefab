@@ -291,6 +291,8 @@ MonoBehaviour:
   syncInterval: 0.1
   health: 2
   maxHealth: 2
+  rewindTimeAbility: {fileID: 11400000, guid: 2a23398353331d344ade8607287bbf8f, type: 2}
+  watsonConcoctionAbility: {fileID: 11400000, guid: 5c7ce01c2334399429cc5e46196a9319, type: 2}
 --- !u!114 &-2352349263512628542
 MonoBehaviour:
   m_ObjectHideFlags: 0

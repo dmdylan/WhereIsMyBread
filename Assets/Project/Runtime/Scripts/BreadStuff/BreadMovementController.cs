@@ -10,6 +10,7 @@ namespace BreadStuff
     public class BreadMovementController : NetworkBehaviour
     {
         [Header("Movement")]
+        [SyncVar]
         [SerializeField] private float moveSpeed = 5f;
         [SerializeField] private GameObject groundCheck;
         [Range(0.0f, 0.3f)]
@@ -51,6 +52,12 @@ namespace BreadStuff
         private Rigidbody playerRigidBody;
         private BreadInput breadInput;
         private Bread bread;
+
+        public float MoveSpeed 
+        {
+            get => moveSpeed;
+            set => moveSpeed = value;
+        }
 
         public override void OnStartLocalPlayer()
         {

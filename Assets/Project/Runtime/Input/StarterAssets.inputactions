@@ -306,16 +306,8 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Sprint",
-                    "type": "PassThrough",
-                    "id": "50be694f-e0c5-4a9d-ab0e-9802190106b6",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": ""
-                },
-                {
                     "name": "AbilityOne",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "43b7354b-6be4-4603-b80c-c94335b4470b",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -323,9 +315,9 @@
                 },
                 {
                     "name": "AbilityTwo",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "72bb0622-1155-4444-be43-9c26721cf117",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
                 }
@@ -487,30 +479,8 @@
                 },
                 {
                     "name": "",
-                    "id": "e9179fcb-7a0e-404d-bbe9-ce38e568edb5",
-                    "path": "<Keyboard>/leftShift",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "Sprint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "1492ceef-5824-4a06-ac43-d16185b580ae",
-                    "path": "<Gamepad>/leftTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Sprint",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "fbf552ed-00ea-41c7-98b4-ce29edd31942",
-                    "path": "<Mouse>/rightButton",
+                    "path": "<Keyboard>/1",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -521,7 +491,7 @@
                 {
                     "name": "",
                     "id": "1ad9cc6d-2e97-4409-83fd-3a42703ece40",
-                    "path": "<Gamepad>/leftTrigger",
+                    "path": "<Gamepad>/buttonWest",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -532,7 +502,7 @@
                 {
                     "name": "",
                     "id": "43c1123c-fe80-489f-a8ad-2bd73062d36a",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Keyboard>/2",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -543,7 +513,7 @@
                 {
                     "name": "",
                     "id": "e3db92aa-a5be-4d8c-8f8a-f4b7f7127747",
-                    "path": "<Gamepad>/rightTrigger",
+                    "path": "<Gamepad>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

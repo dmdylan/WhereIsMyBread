@@ -12,10 +12,42 @@ namespace BreadStuff
 
         private Queue<Vector3> previousPositions;
 
+        private void Start()
+        {
+            if (!isLocalPlayer) return;
+
+            previousPositions = new Queue<Vector3>();
+
+            StartCoroutine(AddPositionsToPositionQueue());
+            StartCoroutine(AbilityOneCooldown(rewindTimeAbility.AbilityDelayTimer));
+            StartCoroutine(AbilityTwoCooldown(watsonConcoctionAbility.AbilityDelayTimer));
+        }
+
         private void Update()
         {
-            Debug.Log("Using ability one: " + breadInput.IsUsingAbilityOne);
-            Debug.Log("Using ability two: " + breadInput.IsUsingAbilityTwo);
+            if (!isLocalPlayer) return;
+
+            if (isAbilityOneReady == true && breadInput.IsUsingAbilityOne == true)
+            {
+                RewindTimeAbility();
+            }
+
+            if (isAbilityTwoReady == true && breadInput.IsUsingAbilityTwo == true)
+            {
+                WatsonConcoctionAbility();
+            }                     
+        }
+
+        private void RewindTimeAbility()
+        {
+            CmdSetPosition();
+            StartCoroutine(AbilityOneCooldown(rewindTimeAbility.AbilityCooldown));
+        }
+
+        private void WatsonConcoctionAbility()
+        {
+            CmdSetMoveSpeed();
+            StartCoroutine(AbilityTwoCooldown(watsonConcoctionAbility.AbilityCooldown));
         }
 
         private IEnumerator AddPositionsToPositionQueue()
@@ -33,10 +65,26 @@ namespace BreadStuff
             StartCoroutine(AddPositionsToPositionQueue());
         }
 
+        private IEnumerator ChangeMoveSpeed(float moveSpeedMultiplier, float duration)
+        {
+            float baseSpeed = breadMovementController.MoveSpeed;
+            breadMovementController.MoveSpeed *= moveSpeedMultiplier;
+
+            yield return new WaitForSeconds(duration);
+
+            breadMovementController.MoveSpeed = baseSpeed;
+        }
+
         [Command]
         private void CmdSetPosition()
         {
             transform.position = previousPositions.Peek();
+        }
+
+        [Command]
+        private void CmdSetMoveSpeed()
+        {
+            StartCoroutine(ChangeMoveSpeed(watsonConcoctionAbility.AbilityEffectFloat, watsonConcoctionAbility.AbilityDuration));
         }
     }
 }

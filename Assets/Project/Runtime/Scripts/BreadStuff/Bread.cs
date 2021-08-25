@@ -14,15 +14,21 @@ namespace BreadStuff
         [SerializeField] protected int health;
 
         [SerializeField] private int maxHealth = 2;
-        protected BreadInput breadInput;
         //[SerializeField] private float damageSpeed = 8f;
         //[SerializeField] private float damagedSpeedTimeBeforeDecay = 2f;
         //[SerializeField] private float damagedSpeedDecayTime = 3f;
 
-        private BreadState breadState;
         //private float baseMoveSpeed;
         //
         //public float DamageSpeed => damageSpeed;
+
+        protected bool isAbilityOneReady = true;
+        protected bool isAbilityTwoReady = true;
+        protected BreadInput breadInput;
+        protected BreadMovementController breadMovementController;
+        
+        private BreadState breadState;
+        
         public BreadState BreadState => breadState;
 
         public override void OnStartLocalPlayer()
@@ -30,6 +36,7 @@ namespace BreadStuff
             base.OnStartLocalPlayer();
 
             breadInput = GetComponent<BreadInput>();
+            breadMovementController = GetComponent<BreadMovementController>();
             health = maxHealth;
         }
 
@@ -63,6 +70,24 @@ namespace BreadStuff
         protected void CmdTakeDamage()
         {
             health--;
+        }
+
+        protected virtual IEnumerator AbilityOneCooldown(float seconds)
+        {
+            if (isAbilityOneReady == false) yield break;
+
+            isAbilityOneReady = false;
+            yield return new WaitForSeconds(seconds);
+            isAbilityOneReady = true;
+        }
+
+        protected virtual IEnumerator AbilityTwoCooldown(float seconds)
+        {
+            if (isAbilityTwoReady == false) yield break;
+
+            isAbilityTwoReady = false;
+            yield return new WaitForSeconds(seconds);
+            isAbilityTwoReady = true;
         }
 
         //IEnumerator MoveSpeedDecay(float baseSpeed, float damagedSpeed, float timeBeforeDecay, float decayTime)
