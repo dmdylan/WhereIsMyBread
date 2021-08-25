@@ -361,6 +361,7 @@
 "Assets/Project/Runtime/Scripts/NetworkButtons.cs"
 "Assets/Project/Runtime/Scripts/PlayerInputController.cs"
 "Assets/Project/Runtime/Scripts/PlayerNamePanelUI.cs"
+"Assets/Project/Runtime/Scripts/ScriptableObjects/AbilitySO.cs"
 "Assets/Project/Runtime/Scripts/ScriptableObjects/CharacterListSO.cs"
 "Assets/Project/Runtime/Scripts/ThirdPersonController.cs"
 "Assets/Project/Runtime/Scripts/ThrowTrident.cs"

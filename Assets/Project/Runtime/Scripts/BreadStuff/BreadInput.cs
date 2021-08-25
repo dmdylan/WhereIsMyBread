@@ -10,10 +10,14 @@ namespace BreadStuff
         private Vector2 moveInput;
         private Vector2 lookInput;
         private bool isJumping;
+        private bool isUsingAbilityOne;
+        private bool isUsingAbilityTwo;
 
         public Vector2 MoveInput => moveInput;
         public Vector2 LookInput => lookInput;
         public bool IsJumping => isJumping;
+        public bool IsUsingAbilityOne => isUsingAbilityOne;
+        public bool IsUsingAbilityTwo => isUsingAbilityTwo;
 
         public void OnMove(InputValue value)
         {
@@ -28,6 +32,16 @@ namespace BreadStuff
         public void OnLook(InputValue value)
         {
             lookInput = value.Get<Vector2>();
+        }
+
+        public void OnAbilityOne(InputValue value)
+        {
+            isUsingAbilityOne = value.isPressed;
+        }
+
+        public void OnAbilityTwo(InputValue value)
+        {
+            isUsingAbilityTwo = value.isPressed;
         }
 
         IEnumerator JumpInput(bool newJumpState)

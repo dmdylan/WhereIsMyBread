@@ -14,6 +14,7 @@ namespace BreadStuff
         [SerializeField] protected int health;
 
         [SerializeField] private int maxHealth = 2;
+        protected BreadInput breadInput;
         //[SerializeField] private float damageSpeed = 8f;
         //[SerializeField] private float damagedSpeedTimeBeforeDecay = 2f;
         //[SerializeField] private float damagedSpeedDecayTime = 3f;
@@ -28,6 +29,7 @@ namespace BreadStuff
         {
             base.OnStartLocalPlayer();
 
+            breadInput = GetComponent<BreadInput>();
             health = maxHealth;
         }
 
@@ -36,13 +38,13 @@ namespace BreadStuff
             //TODO: Disable current gameobject and input. Set camera follow to other players.
             //Be able to cycle through players for spectate.
 
-            //00TODO: Add possible 3rd camera for spectate mode.
+            //TODO: Add possible 3rd camera for spectate mode.
             NetworkServer.Destroy(gameObject);
         }
 
         public virtual void TakeDamage()
         {
-            //CmdTakeDamage();
+            CmdTakeDamage();
 
             if (health <= 0)
             {

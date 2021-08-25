@@ -314,20 +314,20 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Aim",
-                    "type": "Value",
+                    "name": "AbilityOne",
+                    "type": "Button",
                     "id": "43b7354b-6be4-4603-b80c-c94335b4470b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
                 },
                 {
-                    "name": "Throw",
+                    "name": "AbilityTwo",
                     "type": "Button",
                     "id": "72bb0622-1155-4444-be43-9c26721cf117",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": "Press"
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -514,7 +514,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Aim",
+                    "action": "AbilityOne",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -525,7 +525,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Aim",
+                    "action": "AbilityOne",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -536,7 +536,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Throw",
+                    "action": "AbilityTwo",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -547,7 +547,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Throw",
+                    "action": "AbilityTwo",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

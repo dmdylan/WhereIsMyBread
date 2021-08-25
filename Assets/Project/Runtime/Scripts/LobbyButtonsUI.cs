@@ -49,6 +49,5 @@ public class LobbyButtonsUI : MonoBehaviour
     public void OnStartGameButton()
     {
         NetworkManager.singleton.ServerChangeScene(((WMBNetworkManager)NetworkManager.singleton).GameplayScene);
-        //((WMBNetworkManager)NetworkManager.singleton).ServerChangeScene(((WMBNetworkManager)NetworkManager.singleton).GameplayScene);
     }
 }

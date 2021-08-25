@@ -15,6 +15,7 @@ namespace BreadStuff
         [Range(0.0f, 0.3f)]
         [SerializeField] private float rotationSmoothTime = 0.12f;
         [SerializeField] private float jumpForce = 1f;
+        [SerializeField] private GameObject wallCheck;
         [SerializeField] private LayerMask layerMask;
         [SerializeField] private float wallCheckSphereRadius = .2f;
         [SerializeField] private float wallCheckSphereDistance = .1f;
@@ -34,6 +35,7 @@ namespace BreadStuff
         private Animator animator;
         private int runningID;
         private int jumpingID;
+        private int groundedID;
 
         //Camera and movement
         private Camera playerCamera;
@@ -63,12 +65,6 @@ namespace BreadStuff
             StartCoroutine(GroundCheck());
         }
 
-        private void Update()
-        {
-            if (!isLocalPlayer) return;
-
-        }
-
         private void FixedUpdate()
         {
             if (!isLocalPlayer) return;
@@ -88,6 +84,12 @@ namespace BreadStuff
         {
             breadInput.MoveInput.Normalize();
 
+            if (breadInput.MoveInput == Vector2.zero)
+            {
+                animator.SetBool(runningID, false);
+                return;
+            }
+
             if (breadInput.MoveInput != Vector2.zero)
             {
                 //Get the angle of input based on the camera direction
@@ -98,16 +100,15 @@ namespace BreadStuff
                 playerRigidBody.MoveRotation(Quaternion.Euler(0.0f, rotation, 0.0f));
             }
 
-            if (breadInput.MoveInput == Vector2.zero) return;
-
             //Forward movement direction based on which direction the body is facing
             targetDirection = Quaternion.Euler(0.0f, targetRotation, 0.0f) * Vector3.forward;
 
             //Check if there is a wall right in front of us
-            if (Physics.SphereCast(transform.position, wallCheckSphereRadius, targetDirection, out _, wallCheckSphereDistance, layerMask))
+            if (Physics.SphereCast(wallCheck.transform.position, wallCheckSphereRadius, targetDirection, out _, wallCheckSphereDistance, layerMask))
                 return;
 
             playerRigidBody.MovePosition(playerRigidBody.position + (targetDirection * moveSpeed * Time.deltaTime));
+            animator.SetBool(runningID, true);
         }
 
         private void Jump()
@@ -141,14 +142,17 @@ namespace BreadStuff
         {
             runningID = Animator.StringToHash("isRunning");
             jumpingID = Animator.StringToHash("jumped");
+            groundedID = Animator.StringToHash("isGrounded");
         }
 
         private IEnumerator GroundCheck()
         {
             isGrounded = Physics.CheckSphere(groundCheck.transform.position, groundCheckRadius, groundLayers, QueryTriggerInteraction.Ignore);
 
-            if (isGrounded == true && bread.BreadState != BreadState.Grounded)
+            if (isGrounded == true && bread.BreadState != BreadState.Grounded) 
                 bread.SetState(BreadState.Grounded);
+
+            animator.SetBool(groundedID, isGrounded);
 
             yield return new WaitForSeconds(0);
             StartCoroutine(GroundCheck());
