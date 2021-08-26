@@ -13,14 +13,10 @@ namespace BreadStuff
         [SyncVar]
         [SerializeField] protected int health;
 
-        [SerializeField] private int maxHealth = 2;
-        //[SerializeField] private float damageSpeed = 8f;
-        //[SerializeField] private float damagedSpeedTimeBeforeDecay = 2f;
-        //[SerializeField] private float damagedSpeedDecayTime = 3f;
-
-        //private float baseMoveSpeed;
-        //
-        //public float DamageSpeed => damageSpeed;
+        [SerializeField] protected int maxHealth = 2;
+        [SerializeField] private float damageSpeedMultiplier = 1.5f;
+        [SerializeField] private float damagedSpeedTimeBeforeDecay = 2f;
+        [SerializeField] private float damagedSpeedDecayTime = 3f;
 
         protected bool isAbilityOneReady = true;
         protected bool isAbilityTwoReady = true;
@@ -28,8 +24,10 @@ namespace BreadStuff
         protected BreadMovementController breadMovementController;
         
         private BreadState breadState;
+        private float baseMoveSpeed;
         
         public BreadState BreadState => breadState;
+        public float DamageSpeed => damageSpeedMultiplier;
 
         public override void OnStartLocalPlayer()
         {
@@ -38,6 +36,7 @@ namespace BreadStuff
             breadInput = GetComponent<BreadInput>();
             breadMovementController = GetComponent<BreadMovementController>();
             health = maxHealth;
+            baseMoveSpeed = breadMovementController.MoveSpeed;
         }
 
         public virtual void Destroyed()
@@ -57,8 +56,10 @@ namespace BreadStuff
             {
                 Destroyed();
             }
-
-            //StartCoroutine(MoveSpeedDecay(baseMoveSpeed, damageSpeed, damagedSpeedTimeBeforeDecay, damagedSpeedDecayTime));
+            else
+            {
+                StartCoroutine(MoveSpeedDecay(baseMoveSpeed, damageSpeedMultiplier, damagedSpeedTimeBeforeDecay, damagedSpeedDecayTime));
+            }
         }
 
         public void SetState(BreadState newState)
@@ -90,22 +91,22 @@ namespace BreadStuff
             isAbilityTwoReady = true;
         }
 
-        //IEnumerator MoveSpeedDecay(float baseSpeed, float damagedSpeed, float timeBeforeDecay, float decayTime)
-        //{
-        //    float timeElapsed = 0f;
-        //    controller.MoveSpeed = damagedSpeed;
-        //
-        //    yield return new WaitForSeconds(timeBeforeDecay);
-        //
-        //    while (timeElapsed < decayTime)
-        //    {
-        //        controller.MoveSpeed = Mathf.Lerp(damagedSpeed, baseSpeed, timeElapsed / decayTime);
-        //        timeElapsed += Time.deltaTime;
-        //
-        //        yield return null;
-        //    }
-        //
-        //    controller.MoveSpeed = baseSpeed;
-        //}
+        IEnumerator MoveSpeedDecay(float baseSpeed, float damagedSpeed, float timeBeforeDecay, float decayTime)
+        {
+            float timeElapsed = 0f;
+            breadMovementController.MoveSpeed *= damagedSpeed;
+        
+            yield return new WaitForSeconds(timeBeforeDecay);
+        
+            while (timeElapsed < decayTime)
+            {
+                breadMovementController.MoveSpeed = Mathf.Lerp(damagedSpeed, baseSpeed, timeElapsed / decayTime);
+                timeElapsed += Time.deltaTime;
+        
+                yield return null;
+            }
+
+            breadMovementController.MoveSpeed = baseSpeed;
+        }
     }
 }

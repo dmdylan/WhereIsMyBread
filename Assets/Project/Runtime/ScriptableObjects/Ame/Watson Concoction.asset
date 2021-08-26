@@ -17,4 +17,4 @@ MonoBehaviour:
   abilityDelayTimer: 10
   abilityCooldown: 30
   abilityDuration: 4
-  abilityEffectFloat: 1.5
+  abilityEffectFloat: 1.75

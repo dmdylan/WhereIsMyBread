@@ -352,6 +352,7 @@
 "Assets/Project/Runtime/Scripts/BreadStuff/Bread.cs"
 "Assets/Project/Runtime/Scripts/BreadStuff/BreadInput.cs"
 "Assets/Project/Runtime/Scripts/BreadStuff/BreadMovementController.cs"
+"Assets/Project/Runtime/Scripts/BreadStuff/KiaraBread.cs"
 "Assets/Project/Runtime/Scripts/CharacterMovement.cs"
 "Assets/Project/Runtime/Scripts/GameManager.cs"
 "Assets/Project/Runtime/Scripts/GetVersionNumber.cs"

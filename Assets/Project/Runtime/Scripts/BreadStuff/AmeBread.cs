@@ -7,8 +7,8 @@ namespace BreadStuff
 {
     public class AmeBread : Bread
     {
-        public AbilitySO rewindTimeAbility;
-        public AbilitySO watsonConcoctionAbility;
+        [SerializeField] private AbilitySO rewindTimeAbility;
+        [SerializeField] private AbilitySO watsonConcoctionAbility;
 
         private Queue<Vector3> previousPositions;
 
