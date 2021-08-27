@@ -35,6 +35,13 @@ namespace BreadStuff
                 //FlightAbility();
                 StartCoroutine(StartFlight());
             }
+
+            //For debugging atm
+            if(isAbilityTwoReady == true && breadInput.IsUsingAbilityTwo == true)
+            {
+                TakeDamage();
+                StartCoroutine(AbilityTwoCooldown(1));
+            }
         }
 
         private void FixedUpdate()
@@ -45,26 +52,34 @@ namespace BreadStuff
                 FlightAbility();
         }
 
-        public override void Destroyed()
+        public override void TakeDamage()
         {
-            if(canRevive == true)
+            CmdTakeDamage();
+
+            if(health <= 0 && canRevive)
             {
                 ReviveAbility();
             }
+            else if(health <= 0 && !canRevive)
+            {
+                Destroyed();
+            }
             else
             {
-                base.Destroyed();
+                StartCoroutine(MoveSpeedDecay());
             }
         }
 
         #region Flight Ability
 
+        //TODO: Make so body is rotated in x by 90 at all times then aims at camera
         private void FlightAbility()
         {
             playerRigidbody.AddForce(playerCamera.transform.TransformDirection(Vector3.forward) * flightAbility.AbilityEffectFloat, 
                 ForceMode.VelocityChange);
 
-            playerRigidbody.MoveRotation(Quaternion.Euler(playerCamera.transform.TransformDirection(Vector3.forward)));
+            playerRigidbody.MoveRotation(playerCamera.transform.rotation);
+            //playerRigidbody.MoveRotation(Quaternion.Euler(90,0,0));
         }
 
         //TODO: Rotate ridgidbody with dotween, add thrust, rotate towards camera facing direction

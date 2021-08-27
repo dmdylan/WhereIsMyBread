@@ -3,6 +3,7 @@ using StarterAssets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace BreadStuff
 {
@@ -26,6 +27,7 @@ namespace BreadStuff
         
         private BreadState breadState;
         private float baseMoveSpeed;
+        private PlayerInput playerInput;
         
         public BreadState BreadState => breadState;
 
@@ -33,6 +35,8 @@ namespace BreadStuff
         {
             base.OnStartLocalPlayer();
 
+            playerInput = GetComponent<PlayerInput>();
+            playerInput.enabled = true;
             breadInput = GetComponent<BreadInput>();
             breadMovementController = GetComponent<BreadMovementController>();
             health = maxHealth;
@@ -58,9 +62,7 @@ namespace BreadStuff
             }
             else
             {
-                StartCoroutine(MoveSpeedDecay(baseMoveSpeed, breadDamaged.DamagedSpeedMultiplier, 
-                    breadDamaged.DamagedSpeedTimeBeforeDecay, 
-                    breadDamaged.DamagedSpeedDecayTime));
+                StartCoroutine(MoveSpeedDecay());
             }
         }
 
@@ -93,22 +95,22 @@ namespace BreadStuff
             isAbilityTwoReady = true;
         }
 
-        IEnumerator MoveSpeedDecay(float baseSpeed, float damagedSpeed, float timeBeforeDecay, float decayTime)
+        protected IEnumerator MoveSpeedDecay()
         {
             float timeElapsed = 0f;
-            breadMovementController.MoveSpeed *= damagedSpeed;
+            breadMovementController.MoveSpeed *= breadDamaged.DamagedSpeedMultiplier;
         
-            yield return new WaitForSeconds(timeBeforeDecay);
+            yield return new WaitForSeconds(breadDamaged.DamagedSpeedTimeBeforeDecay);
         
-            while (timeElapsed < decayTime)
+            while (timeElapsed < breadDamaged.DamagedSpeedDecayTime)
             {
-                breadMovementController.MoveSpeed = Mathf.Lerp(damagedSpeed, baseSpeed, timeElapsed / decayTime);
+                breadMovementController.MoveSpeed = Mathf.Lerp(breadDamaged.DamagedSpeedMultiplier, baseMoveSpeed, timeElapsed / breadDamaged.DamagedSpeedDecayTime);
                 timeElapsed += Time.deltaTime;
         
                 yield return null;
             }
 
-            breadMovementController.MoveSpeed = baseSpeed;
+            breadMovementController.MoveSpeed = baseMoveSpeed;
         }
     }
 }
