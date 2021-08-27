@@ -10,14 +10,15 @@ namespace BreadStuff
 
     public abstract class Bread : NetworkBehaviour, IDamageable
     {
+        //Health
         [SyncVar]
         [SerializeField] protected int health;
-
         [SerializeField] protected int maxHealth = 2;
-        [SerializeField] private float damageSpeedMultiplier = 1.5f;
-        [SerializeField] private float damagedSpeedTimeBeforeDecay = 2f;
-        [SerializeField] private float damagedSpeedDecayTime = 3f;
 
+        //On hit
+        [SerializeField] private BreadDamagedSO breadDamaged;
+
+        //Protected vars
         protected bool isAbilityOneReady = true;
         protected bool isAbilityTwoReady = true;
         protected BreadInput breadInput;
@@ -27,7 +28,6 @@ namespace BreadStuff
         private float baseMoveSpeed;
         
         public BreadState BreadState => breadState;
-        public float DamageSpeed => damageSpeedMultiplier;
 
         public override void OnStartLocalPlayer()
         {
@@ -58,7 +58,9 @@ namespace BreadStuff
             }
             else
             {
-                StartCoroutine(MoveSpeedDecay(baseMoveSpeed, damageSpeedMultiplier, damagedSpeedTimeBeforeDecay, damagedSpeedDecayTime));
+                StartCoroutine(MoveSpeedDecay(baseMoveSpeed, breadDamaged.DamagedSpeedMultiplier, 
+                    breadDamaged.DamagedSpeedTimeBeforeDecay, 
+                    breadDamaged.DamagedSpeedDecayTime));
             }
         }
 

@@ -16,18 +16,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    [SerializeField] private CinemachineVirtualCamera[] cinemachineVirtualCameras;
-    [SerializeField] private CinemachineFreeLook[] cinemachineFreeLooks;
+    [SerializeField] private CinemachineVirtualCamera[] cinemachineGuraCameras;
+    [SerializeField] private CinemachineVirtualCamera[] cinemachineBreadCameras;
 
-    public CinemachineVirtualCamera[] CinemachineVirtualCameras
+    public CinemachineVirtualCamera[] CinemachineGuraCameras
     {
-        get { return cinemachineVirtualCameras; }
+        get { return cinemachineGuraCameras; }
     }
 
-    public CinemachineFreeLook[] CinemachineFreeLooks
+    public CinemachineVirtualCamera[] CinemachineBreadCameras
     {
-        get { return cinemachineFreeLooks; }
+        get { return cinemachineBreadCameras; }
     }
-
     //TODO: Get list of all players that join match. Can be used to set other players follow cameras for spectating.
 }

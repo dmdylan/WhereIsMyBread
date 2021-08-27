@@ -57,6 +57,7 @@
     <Compile Include="Assets\Project\Runtime\Scripts\Trident.cs" />
     <Compile Include="Assets\Project\Runtime\Input\StarterAssetsInputs.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\LobbyButtonsUI.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\KiaraBread.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\LobbyPanelUI.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\BreadMovementController.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\GameManager.cs" />
@@ -75,7 +76,8 @@
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\AmeBread.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\Bread.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\PlayerNamePanelUI.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\KiaraBread.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\ScriptableObjects\BreadDamagedSO.cs" />
+    <Compile Include="Assets\Project\Runtime\Input\StarterAssets.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Project\Runtime\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />

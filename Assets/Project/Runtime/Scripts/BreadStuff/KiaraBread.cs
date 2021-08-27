@@ -1,5 +1,4 @@
 using DG.Tweening;
-using DG;
 using Mirror;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,6 +12,7 @@ namespace BreadStuff
         [SerializeField] private AbilitySO reviveAbility;
 
         private Rigidbody playerRigidbody;
+        private Camera playerCamera;
         private bool canRevive = true;
         private bool inFlight = false;
 
@@ -21,6 +21,7 @@ namespace BreadStuff
             if (!isLocalPlayer) return;
 
             DOTween.Init();
+            playerCamera = Camera.main;
             playerRigidbody = GetComponent<Rigidbody>();
             StartCoroutine(AbilityOneCooldown(flightAbility.AbilityDelayTimer));
         }
@@ -31,8 +32,17 @@ namespace BreadStuff
 
             if (isAbilityOneReady == true && breadInput.IsUsingAbilityOne == true)
             {
-                FlightAbility();
+                //FlightAbility();
+                StartCoroutine(StartFlight());
             }
+        }
+
+        private void FixedUpdate()
+        {
+            if (!isLocalPlayer) return;
+
+            if (inFlight)
+                FlightAbility();
         }
 
         public override void Destroyed()
@@ -51,7 +61,10 @@ namespace BreadStuff
 
         private void FlightAbility()
         {
-            inFlight = true;
+            playerRigidbody.AddForce(playerCamera.transform.TransformDirection(Vector3.forward) * flightAbility.AbilityEffectFloat, 
+                ForceMode.VelocityChange);
+
+            playerRigidbody.MoveRotation(Quaternion.Euler(playerCamera.transform.TransformDirection(Vector3.forward)));
         }
 
         //TODO: Rotate ridgidbody with dotween, add thrust, rotate towards camera facing direction
@@ -60,9 +73,10 @@ namespace BreadStuff
             inFlight = true;
             isAbilityOneReady = false;
             playerRigidbody.useGravity = false;
-            
             yield return new WaitForSeconds(flightAbility.AbilityDuration);
             inFlight = false;
+            playerRigidbody.useGravity = true;
+            isAbilityOneReady = true;
         }
 
         #endregion

@@ -328,7 +328,7 @@ namespace StarterAssets
 
 		private void CameraFollowSetup()
 		{
-			foreach (CinemachineVirtualCamera camera in GameManager.Instance.CinemachineVirtualCameras)
+			foreach (CinemachineVirtualCamera camera in GameManager.Instance.CinemachineGuraCameras)
 			{
 				camera.Follow = CinemachineCameraTarget.transform;
 			}

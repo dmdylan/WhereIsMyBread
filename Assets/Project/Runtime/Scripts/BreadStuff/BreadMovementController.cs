@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using Cinemachine;
 
 namespace BreadStuff
 {
@@ -179,8 +179,11 @@ namespace BreadStuff
 
         private void SetBreadCameras()
         {
-            GameManager.Instance.CinemachineVirtualCameras[2].Follow = cameraFollowTarget.transform;
-            GameManager.Instance.CinemachineVirtualCameras[2].LookAt = cameraFollowTarget.transform;
+            foreach(CinemachineVirtualCamera camera in GameManager.Instance.CinemachineBreadCameras)
+            {
+                camera.Follow = cameraFollowTarget.transform;
+                camera.LookAt = cameraFollowTarget.transform;
+            }
         }
 
         private void OnDrawGizmosSelected()

@@ -16,7 +16,7 @@ public class AimCameraScript : NetworkBehaviour
     public override void OnStartLocalPlayer()
     {
         base.OnStartLocalPlayer();
-        vcam = GameManager.Instance.CinemachineVirtualCameras[1];
+        vcam = GameManager.Instance.CinemachineGuraCameras[1];
         input = GetComponent<StarterAssetsInputs>();
         StartCoroutine(ChangeCamera());
     }
