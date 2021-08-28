@@ -81,6 +81,7 @@
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\Bread.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\PlayerNamePanelUI.cs" />
     <Compile Include="Assets\Project\Runtime\Input\StarterAssets.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\CalliBread.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Project\Runtime\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
