@@ -41,6 +41,9 @@ namespace BreadStuff
             breadMovementController = GetComponent<BreadMovementController>();
             health = maxHealth;
             baseMoveSpeed = breadMovementController.MoveSpeed;
+            //TODO: Move this somewhere smart
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         public virtual void Destroyed()

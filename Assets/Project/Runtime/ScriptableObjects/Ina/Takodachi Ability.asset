@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc22d1d5c2359e54089cb14568043631, type: 3}
+  m_Name: Takodachi Ability
+  m_EditorClassIdentifier: 
+  icon: {fileID: 0}
+  abilitySFX: {fileID: 0}
+  abilityDelayTimer: 0
+  abilityCooldown: 0
+  abilityDuration: 0
+  abilityEffectFloat: 0

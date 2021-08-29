@@ -1,4 +1,3 @@
-using DG.Tweening;
 using Mirror;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,7 +19,6 @@ namespace BreadStuff
         {
             if (!isLocalPlayer) return;
 
-            DOTween.Init();
             playerCamera = Camera.main;
             playerRigidbody = GetComponent<Rigidbody>();
             StartCoroutine(AbilityOneCooldown(flightAbility.AbilityDelayTimer));
@@ -73,6 +71,7 @@ namespace BreadStuff
         #region Flight Ability
 
         //TODO: Make so body is rotated in x by 90 at all times then aims at camera
+        //TODO: Make so you can press again to cancel ability
         private void FlightAbility()
         {
             playerRigidbody.AddForce(playerCamera.transform.TransformDirection(Vector3.forward) * flightAbility.AbilityEffectFloat, 
@@ -92,6 +91,7 @@ namespace BreadStuff
             inFlight = false;
             playerRigidbody.useGravity = true;
             isAbilityOneReady = true;
+            StartCoroutine(AbilityOneCooldown(flightAbility.AbilityCooldown));
         }
 
         #endregion

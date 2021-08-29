@@ -9,6 +9,7 @@ TagManager:
   - Bread
   - Trident
   - PlayerPanel
+  - Deadbeat
   layers:
   - Default
   - TransparentFX

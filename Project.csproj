@@ -57,31 +57,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Project\Runtime\Scripts\ScriptableObjects\BreadDamagedSO.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\PlayerInputController.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\Trident.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\Spawnables\Trident.cs" />
     <Compile Include="Assets\Project\Runtime\Input\StarterAssetsInputs.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\LobbyButtonsUI.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\Lobby and Menu\LobbyButtonsUI.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\CalliBread.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\KiaraBread.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\LobbyPanelUI.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\InaBread.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\Lobby and Menu\LobbyPanelUI.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\BreadMovementController.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\WMBRoomPlayer.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\Network\WMBRoomPlayer.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\ScriptableObjects\CharacterListSO.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\NetworkButtons.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\ThrowTrident.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\AimCameraScript.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\WMBNetworkManager.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\Lobby and Menu\NetworkButtons.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\Gura\ThrowTrident.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\Gura\AimCameraScript.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\Spawnables\Deadbeats.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\Network\WMBNetworkManager.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\ScriptableObjects\AbilitySO.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\GetVersionNumber.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\IDamageable.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\ThirdPersonController.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\Lobby and Menu\GetVersionNumber.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\Interface\IDamageable.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\Gura\ThirdPersonController.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\BreadInput.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\AmeBread.cs" />
     <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\Bread.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\PlayerNamePanelUI.cs" />
+    <Compile Include="Assets\Project\Runtime\Scripts\Lobby and Menu\PlayerNamePanelUI.cs" />
     <Compile Include="Assets\Project\Runtime\Input\StarterAssets.cs" />
-    <Compile Include="Assets\Project\Runtime\Scripts\BreadStuff\CalliBread.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Project\Runtime\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
