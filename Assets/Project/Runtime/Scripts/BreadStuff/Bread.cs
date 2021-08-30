@@ -28,13 +28,16 @@ namespace BreadStuff
         private BreadState breadState;
         private float baseMoveSpeed;
         private PlayerInput playerInput;
+        protected Rigidbody playerRigidbody;
         
         public BreadState BreadState => breadState;
+        public Rigidbody PlayerRigidbody => playerRigidbody;
 
         public override void OnStartLocalPlayer()
         {
             base.OnStartLocalPlayer();
 
+            playerRigidbody = GetComponent<Rigidbody>();
             playerInput = GetComponent<PlayerInput>();
             playerInput.enabled = true;
             breadInput = GetComponent<BreadInput>();

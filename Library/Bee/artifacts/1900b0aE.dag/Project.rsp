@@ -372,6 +372,7 @@
 "Assets/Project/Runtime/Scripts/ScriptableObjects/BreadDamagedSO.cs"
 "Assets/Project/Runtime/Scripts/ScriptableObjects/CharacterListSO.cs"
 "Assets/Project/Runtime/Scripts/Spawnables/Deadbeats.cs"
+"Assets/Project/Runtime/Scripts/Spawnables/Takodachi.cs"
 "Assets/Project/Runtime/Scripts/Spawnables/Trident.cs"
 -langversion:8.0
 

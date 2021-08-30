@@ -10,7 +10,6 @@ namespace BreadStuff
         [SerializeField] private AbilitySO flightAbility;
         [SerializeField] private AbilitySO reviveAbility;
 
-        private Rigidbody playerRigidbody;
         private Camera playerCamera;
         private bool canRevive = true;
         private bool inFlight = false;
@@ -20,7 +19,6 @@ namespace BreadStuff
             if (!isLocalPlayer) return;
 
             playerCamera = Camera.main;
-            playerRigidbody = GetComponent<Rigidbody>();
             StartCoroutine(AbilityOneCooldown(flightAbility.AbilityDelayTimer));
         }
 

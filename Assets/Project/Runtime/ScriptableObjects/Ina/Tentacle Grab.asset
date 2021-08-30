@@ -15,6 +15,6 @@ MonoBehaviour:
   icon: {fileID: 0}
   abilitySFX: {fileID: 0}
   abilityDelayTimer: 0
-  abilityCooldown: 0
+  abilityCooldown: 5
   abilityDuration: 0
-  abilityEffectFloat: 10
+  abilityEffectFloat: 20
