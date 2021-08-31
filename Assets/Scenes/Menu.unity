@@ -5193,12 +5193,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3336405230278582474, guid: 4d7967eff9c97a843ac3bf3975fa393f, type: 3}
       propertyPath: spawnPrefabs.Array.size
-      value: 2
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3336405230278582474, guid: 4d7967eff9c97a843ac3bf3975fa393f, type: 3}
       propertyPath: spawnPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 6189780678400777628, guid: fd1503d8b9fa7154e954109c8869850c, type: 3}
+      objectReference: {fileID: 7734082567072829804, guid: 6d2fdfdd4b3b26140a95070a85175347, type: 3}
+    - target: {fileID: 3336405230278582474, guid: 4d7967eff9c97a843ac3bf3975fa393f, type: 3}
+      propertyPath: spawnPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 8324547875002410709, guid: 94c6a1cb53308d14e8466160146fc54a, type: 3}
+    - target: {fileID: 3336405230278582474, guid: 4d7967eff9c97a843ac3bf3975fa393f, type: 3}
+      propertyPath: spawnPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 4847771756020872759, guid: dabf030ddf1442646a459a3f7e91c6ce, type: 3}
+    - target: {fileID: 3336405230278582474, guid: 4d7967eff9c97a843ac3bf3975fa393f, type: 3}
+      propertyPath: spawnPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 2427619542463609419, guid: 000d889aace1d8041baa4f8d4741001e, type: 3}
+    - target: {fileID: 3336405230278582474, guid: 4d7967eff9c97a843ac3bf3975fa393f, type: 3}
+      propertyPath: spawnPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 213208308607804191, guid: 087489f6c91e9f44894266bf0d8e752e, type: 3}
+    - target: {fileID: 3336405230278582474, guid: 4d7967eff9c97a843ac3bf3975fa393f, type: 3}
+      propertyPath: spawnPrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 4887376086589243636, guid: 62e1f90a035f6964b936aabc3b182612, type: 3}
     - target: {fileID: 3336405230278582475, guid: 4d7967eff9c97a843ac3bf3975fa393f, type: 3}
       propertyPath: m_RootOrder
       value: 2

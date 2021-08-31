@@ -335,6 +335,11 @@ namespace StarterAssets
 			{
 				camera.Follow = CinemachineCameraTarget.transform;
 			}
+
+			foreach (CinemachineVirtualCamera camera1 in GameManager.Instance.CinemachineBreadCameras)
+            {
+				camera1.enabled = false;
+            }
 		}
 
 		private void OnDrawGizmosSelected()

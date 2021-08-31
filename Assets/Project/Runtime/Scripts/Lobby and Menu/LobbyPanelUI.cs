@@ -77,6 +77,18 @@ public class LobbyPanelUI : MonoBehaviour
                 LoopThroughPlayerModelsAndTurnOff();
                 characterChoices[1].SetActive(true);
                 break;
+            case 2:
+                LoopThroughPlayerModelsAndTurnOff();
+                characterChoices[2].SetActive(true);
+                break;
+            case 3:
+                LoopThroughPlayerModelsAndTurnOff();
+                characterChoices[3].SetActive(true);
+                break;
+            case 4:
+                LoopThroughPlayerModelsAndTurnOff();
+                characterChoices[4].SetActive(true);
+                break;
             default:
                 break;
         }
