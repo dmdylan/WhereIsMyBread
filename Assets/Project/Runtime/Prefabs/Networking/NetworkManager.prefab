@@ -66,11 +66,17 @@ MonoBehaviour:
   playerSpawnMethod: 0
   spawnPrefabs:
   - {fileID: 7658206287885011747, guid: 51877b291c6fea64e91727eb162eb121, type: 3}
+  - {fileID: 7734082567072829804, guid: 6d2fdfdd4b3b26140a95070a85175347, type: 3}
+  - {fileID: 8324547875002410709, guid: 94c6a1cb53308d14e8466160146fc54a, type: 3}
+  - {fileID: 4847771756020872759, guid: dabf030ddf1442646a459a3f7e91c6ce, type: 3}
+  - {fileID: 2427619542463609419, guid: 000d889aace1d8041baa4f8d4741001e, type: 3}
+  - {fileID: 213208308607804191, guid: 087489f6c91e9f44894266bf0d8e752e, type: 3}
+  - {fileID: 4887376086589243636, guid: 62e1f90a035f6964b936aabc3b182612, type: 3}
   showRoomGUI: 0
   minPlayers: 1
   roomPlayerPrefab: {fileID: 4659654144291765131, guid: 033b1a7e887f4c8499b7a23453370b90, type: 3}
   RoomScene: Assets/Scenes/Lobby.unity
-  GameplayScene: Assets/Scenes/MainGame.unity
+  GameplayScene: Assets/Scenes/Testing.unity
   _allPlayersReady: 0
   roomSlots: []
   clientIndex: 0
@@ -125,4 +131,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0923bb0b5d23b3b4899a9c830c83665f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: {fileID: 11400000, guid: 5f172b991e33e3d47a3feee1302cf503, type: 2}
