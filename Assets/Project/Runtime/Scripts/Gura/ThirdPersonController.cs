@@ -125,8 +125,6 @@ namespace StarterAssets
 		{
 			if (!isLocalPlayer) return;
 
-			_hasAnimator = TryGetComponent(out _animator);
-
 			JumpAndGravity();
 			GroundedCheck();
 			Move();
@@ -334,6 +332,7 @@ namespace StarterAssets
 			foreach (CinemachineVirtualCamera camera in GameManager.Instance.CinemachineGuraCameras)
 			{
 				camera.Follow = CinemachineCameraTarget.transform;
+				camera.LookAt = CinemachineCameraTarget.transform;
 			}
 
 			foreach (CinemachineVirtualCamera camera1 in GameManager.Instance.CinemachineBreadCameras)
