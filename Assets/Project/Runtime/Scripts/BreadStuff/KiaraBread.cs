@@ -7,9 +7,6 @@ namespace BreadStuff
 {
     public class KiaraBread : Bread
     {
-        [SerializeField] private AbilitySO flightAbility;
-        [SerializeField] private AbilitySO reviveAbility;
-
         private Camera playerCamera;
         private bool canRevive = true;
         private bool inFlight = false;
@@ -19,7 +16,7 @@ namespace BreadStuff
             if (!isLocalPlayer) return;
 
             playerCamera = Camera.main;
-            StartCoroutine(AbilityOneCooldown(flightAbility.AbilityDelayTimer));
+            StartCoroutine(AbilityOneCooldown(abilityOneSO.AbilityDelayTimer));
         }
 
         private void Update()
@@ -72,7 +69,7 @@ namespace BreadStuff
         //TODO: Make so you can press again to cancel ability
         private void FlightAbility()
         {
-            playerRigidbody.AddForce(playerCamera.transform.TransformDirection(Vector3.forward) * flightAbility.AbilityEffectFloat, 
+            playerRigidbody.AddForce(playerCamera.transform.TransformDirection(Vector3.forward) * abilityOneSO.AbilityEffectFloat, 
                 ForceMode.VelocityChange);
 
             playerRigidbody.MoveRotation(playerCamera.transform.rotation);
@@ -85,11 +82,11 @@ namespace BreadStuff
             inFlight = true;
             isAbilityOneReady = false;
             playerRigidbody.useGravity = false;
-            yield return new WaitForSeconds(flightAbility.AbilityDuration);
+            yield return new WaitForSeconds(abilityOneSO.AbilityDuration);
             inFlight = false;
             playerRigidbody.useGravity = true;
             isAbilityOneReady = true;
-            StartCoroutine(AbilityOneCooldown(flightAbility.AbilityCooldown));
+            StartCoroutine(AbilityOneCooldown(abilityOneSO.AbilityCooldown));
         }
 
         #endregion
@@ -106,7 +103,7 @@ namespace BreadStuff
         IEnumerator ReviveAbilityCooldown()
         {
             canRevive = false;
-            yield return new WaitForSeconds(reviveAbility.AbilityCooldown);
+            yield return new WaitForSeconds(abilityTwoSO.AbilityCooldown);
             canRevive = true;
         }
 

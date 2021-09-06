@@ -24,7 +24,11 @@ namespace BreadStuff
         protected bool isAbilityTwoReady = true;
         protected BreadInput breadInput;
         protected BreadMovementController breadMovementController;
-        
+
+        //Ability Objects
+        [SerializeField] protected AbilitySO abilityOneSO;
+        [SerializeField] protected AbilitySO abilityTwoSO;
+
         private BreadState breadState;
         private float baseMoveSpeed;
         private PlayerInput playerInput;
@@ -44,15 +48,19 @@ namespace BreadStuff
             breadMovementController = GetComponent<BreadMovementController>();
             health = maxHealth;
             baseMoveSpeed = breadMovementController.MoveSpeed;
+            GameManager.Instance.UISetup(abilityOneSO, abilityTwoSO);
             //TODO: Move this somewhere smart
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+
         }
 
         public virtual void Destroyed()
         {
             //TODO: Disable current gameobject and input. Set camera follow to other players.
             //Be able to cycle through players for spectate.
+
+
 
             //TODO: Add possible 3rd camera for spectate mode.
             NetworkServer.Destroy(gameObject);
@@ -87,6 +95,7 @@ namespace BreadStuff
         {
             if (isAbilityOneReady == false) yield break;
 
+            StartCoroutine(GameManager.Instance.AbilityOneCountdown(seconds));
             isAbilityOneReady = false;
             yield return new WaitForSeconds(seconds);
             isAbilityOneReady = true;
@@ -96,6 +105,7 @@ namespace BreadStuff
         {
             if (isAbilityTwoReady == false) yield break;
 
+            StartCoroutine(GameManager.Instance.AbilityTwoCountdown(seconds));
             isAbilityTwoReady = false;
             yield return new WaitForSeconds(seconds);
             isAbilityTwoReady = true;

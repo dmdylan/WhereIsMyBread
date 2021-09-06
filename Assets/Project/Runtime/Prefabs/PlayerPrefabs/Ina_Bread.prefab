@@ -6092,8 +6092,8 @@ MonoBehaviour:
   health: 0
   maxHealth: 2
   breadDamaged: {fileID: 11400000, guid: 89b0a6211af2d984e9ddcba17270751d, type: 2}
-  tentacleSwingAbility: {fileID: 11400000, guid: 13e1af7b39da8814ab21d6177b937092, type: 2}
-  takodachiAbility: {fileID: 11400000, guid: 456d171d174e67641a6d3cf15c2e0ae3, type: 2}
+  abilityOneSO: {fileID: 11400000, guid: 13e1af7b39da8814ab21d6177b937092, type: 2}
+  abilityTwoSO: {fileID: 11400000, guid: 456d171d174e67641a6d3cf15c2e0ae3, type: 2}
   takodachiPrefab: {fileID: 4887376086589243636, guid: 62e1f90a035f6964b936aabc3b182612, type: 3}
   layerMask:
     serializedVersion: 2

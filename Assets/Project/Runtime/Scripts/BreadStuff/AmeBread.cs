@@ -7,9 +7,6 @@ namespace BreadStuff
 {
     public class AmeBread : Bread
     {
-        [SerializeField] private AbilitySO rewindTimeAbility;
-        [SerializeField] private AbilitySO watsonConcoctionAbility;
-
         private Queue<Vector3> previousPositions;
 
         private void Start()
@@ -19,8 +16,8 @@ namespace BreadStuff
             previousPositions = new Queue<Vector3>();
 
             StartCoroutine(AddPositionsToPositionQueue());
-            StartCoroutine(AbilityOneCooldown(rewindTimeAbility.AbilityDelayTimer));
-            StartCoroutine(AbilityTwoCooldown(watsonConcoctionAbility.AbilityDelayTimer));
+            StartCoroutine(AbilityOneCooldown(abilityOneSO.AbilityDelayTimer));
+            StartCoroutine(AbilityTwoCooldown(abilityTwoSO.AbilityDelayTimer));
         }
 
         private void Update()
@@ -41,13 +38,13 @@ namespace BreadStuff
         private void RewindTimeAbility()
         {
             CmdSetPosition();
-            StartCoroutine(AbilityOneCooldown(rewindTimeAbility.AbilityCooldown));
+            StartCoroutine(AbilityOneCooldown(abilityOneSO.AbilityCooldown));
         }
 
         private void WatsonConcoctionAbility()
         {
             CmdSetMoveSpeed();
-            StartCoroutine(AbilityTwoCooldown(watsonConcoctionAbility.AbilityCooldown));
+            StartCoroutine(AbilityTwoCooldown(abilityTwoSO.AbilityCooldown));
         }
 
         private IEnumerator AddPositionsToPositionQueue()
@@ -84,7 +81,7 @@ namespace BreadStuff
         [Command]
         private void CmdSetMoveSpeed()
         {
-            StartCoroutine(ChangeMoveSpeed(watsonConcoctionAbility.AbilityEffectFloat, watsonConcoctionAbility.AbilityDuration));
+            StartCoroutine(ChangeMoveSpeed(abilityTwoSO.AbilityEffectFloat, abilityTwoSO.AbilityDuration));
         }
     }
 }

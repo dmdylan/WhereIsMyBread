@@ -43,9 +43,6 @@ public class WMBNetworkManager : NetworkRoomManager
         players.Remove(conn.connectionId);
     }
 
-    //TODO: Might need to even do this. Might be able to auto set player prefab prior to joining if it doesn't impact all
-    //clients connected to the host/network manager.
-
     //TODO: If still autocreate, need way to change spawn positions for bread/gura
     public override void OnRoomStartServer()
     {

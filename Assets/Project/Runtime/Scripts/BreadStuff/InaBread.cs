@@ -8,8 +8,6 @@ namespace BreadStuff
 {
     public class InaBread : Bread
     {
-        [SerializeField] private AbilitySO tentacleSwingAbility;
-        [SerializeField] private AbilitySO takodachiAbility;
         [SerializeField] private GameObject takodachiPrefab;
         [SerializeField] private LayerMask layerMask;
         [SerializeField] private Transform raycastOriginPoint;
@@ -26,8 +24,8 @@ namespace BreadStuff
             DOTween.Init();
             playerCamera = Camera.main;
             lineRenderer = GetComponent<LineRenderer>();
-            StartCoroutine(AbilityOneCooldown(tentacleSwingAbility.AbilityDelayTimer));
-            StartCoroutine(AbilityTwoCooldown(takodachiAbility.AbilityDelayTimer));
+            StartCoroutine(AbilityOneCooldown(abilityOneSO.AbilityDelayTimer));
+            StartCoroutine(AbilityTwoCooldown(abilityTwoSO.AbilityDelayTimer));
         }
 
         // Update is called once per frame
@@ -54,7 +52,7 @@ namespace BreadStuff
         private void SummonTakodachiAbility()
         {
             CmdSummonTakodachi();
-            StartCoroutine(AbilityTwoCooldown(takodachiAbility.AbilityCooldown));
+            StartCoroutine(AbilityTwoCooldown(abilityTwoSO.AbilityCooldown));
         }
 
         [Command]
@@ -69,8 +67,8 @@ namespace BreadStuff
         private void TentacleSwing()
         {
             var direction = playerCamera.transform.forward;
-            Physics.Raycast(raycastOriginPoint.position, direction, out RaycastHit hit, tentacleSwingAbility.AbilityEffectFloat, layerMask);
-            Debug.DrawRay(raycastOriginPoint.position, direction * tentacleSwingAbility.AbilityEffectFloat, Color.green);
+            Physics.Raycast(raycastOriginPoint.position, direction, out RaycastHit hit, abilityOneSO.AbilityEffectFloat, layerMask);
+            Debug.DrawRay(raycastOriginPoint.position, direction * abilityOneSO.AbilityEffectFloat, Color.green);
 
             if (hit.collider == null)
             {
@@ -85,7 +83,7 @@ namespace BreadStuff
 
                 StartCoroutine(HoldingTentacle(travelPoint));
                 lineRenderer.SetPosition(1, hit.point);
-                StartCoroutine(AbilityOneCooldown(tentacleSwingAbility.AbilityCooldown));
+                StartCoroutine(AbilityOneCooldown(abilityOneSO.AbilityCooldown));
             }         
         }
 

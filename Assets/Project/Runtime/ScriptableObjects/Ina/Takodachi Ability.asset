@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc22d1d5c2359e54089cb14568043631, type: 3}
   m_Name: Takodachi Ability
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: ffbe6789e4b249845878126edf543283, type: 3}
+  iconCD: {fileID: 21300000, guid: 2225b75bba84bb34b9d3f0e211bb30ff, type: 3}
   abilitySFX: {fileID: 0}
   abilityDelayTimer: 0
   abilityCooldown: 10

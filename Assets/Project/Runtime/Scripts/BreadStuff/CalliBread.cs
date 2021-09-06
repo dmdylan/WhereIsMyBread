@@ -7,8 +7,6 @@ namespace BreadStuff
 {
     public class CalliBread : Bread
     {
-        [SerializeField] private AbilitySO summonDeadbeatsAbility;
-        [SerializeField] private AbilitySO secondAbility;
         [SerializeField] private GameObject deadbeatsPrefab;
 
         // Start is called before the first frame update
@@ -16,8 +14,8 @@ namespace BreadStuff
         {
             if (!isLocalPlayer) return;
 
-            StartCoroutine(AbilityOneCooldown(summonDeadbeatsAbility.AbilityDelayTimer));
-            StartCoroutine(AbilityTwoCooldown(secondAbility.AbilityDelayTimer));
+            StartCoroutine(AbilityOneCooldown(abilityOneSO.AbilityDelayTimer));
+            StartCoroutine(AbilityTwoCooldown(abilityTwoSO.AbilityDelayTimer));
         }
 
         // Update is called once per frame
@@ -39,7 +37,7 @@ namespace BreadStuff
         private void SummonDeadbeatsAbility()
         {
             CmdSummonDeadbeats();
-            StartCoroutine(AbilityOneCooldown(summonDeadbeatsAbility.AbilityCooldown));
+            StartCoroutine(AbilityOneCooldown(abilityOneSO.AbilityCooldown));
         }
 
         [Command]
