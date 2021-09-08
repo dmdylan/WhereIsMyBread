@@ -5179,10 +5179,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3336405230278582474, guid: 4d7967eff9c97a843ac3bf3975fa393f, type: 3}
-      propertyPath: GameplayScene
-      value: Assets/Scenes/Testing.unity
-      objectReference: {fileID: 0}
     - target: {fileID: 3336405230278582475, guid: 4d7967eff9c97a843ac3bf3975fa393f, type: 3}
       propertyPath: m_RootOrder
       value: 2
