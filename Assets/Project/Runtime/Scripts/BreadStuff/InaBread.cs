@@ -58,7 +58,8 @@ namespace BreadStuff
         [Command]
         private void CmdSummonTakodachi()
         {
-            GameObject newTakodachi = Instantiate(takodachiPrefab, transform.position + transform.forward * 2, transform.rotation);
+            GameObject newTakodachi = Instantiate(takodachiPrefab, transform.position + transform.forward * 2 + transform.up * .25f, Quaternion.identity);
+            newTakodachi.transform.LookAt(transform.position);
             NetworkServer.Spawn(newTakodachi);
         }
 
