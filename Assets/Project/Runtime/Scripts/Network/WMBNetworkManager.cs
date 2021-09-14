@@ -33,6 +33,9 @@ public class WMBNetworkManager : NetworkRoomManager
     public override void OnRoomServerConnect(NetworkConnection conn)
     {
         base.OnRoomServerConnect(conn);
+        if (players.ContainsKey(conn.connectionId))
+            return;
+
         players.Add(conn.connectionId, new PlayerInfo());
         Debug.Log(players.Count);
     }
@@ -51,10 +54,11 @@ public class WMBNetworkManager : NetworkRoomManager
         players = new Dictionary<int, PlayerInfo>();
     }
 
+    //TODO: Sets at other spawn positions. Doesn't really fix the problem, but works for now.
     public override GameObject OnRoomServerCreateGamePlayer(NetworkConnection conn, GameObject roomPlayer)
     {
         //Instantiate new player gameobject to be spawned by the server on scene change
-        roomPlayer = Instantiate(characterList.Characters[players[conn.connectionId].CharacterChoice]);
+        roomPlayer = Instantiate(characterList.Characters[players[conn.connectionId].CharacterChoice], GetStartPosition().position, GetStartPosition().rotation);
         return roomPlayer;
     }
 
