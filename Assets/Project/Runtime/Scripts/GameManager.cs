@@ -26,12 +26,31 @@ public class GameManager : NetworkBehaviour
     [SyncVar(hook = nameof(UpdateTimer))]
     private int gameTimer;
 
+    //Game Settings
+    [Header("Game Settings")]
     [SerializeField] private int gameLength;
+
+    //UI Info
+    [Header("UI Fields")]
+    [SerializeField] private TMP_Text gameTimerText;
+
+    //Ability UI
+    [Header("Ability UI Info")]
     [SerializeField] private Image abilityOneImage;
     [SerializeField] private Image abilityTwoImage;
     [SerializeField] private TMP_Text abilityOneCDText;
     [SerializeField] private TMP_Text abilityTwoCDText;
-    [SerializeField] private TMP_Text gameTimerText;
+
+    //Game Over UI
+    [Header("Game Over UI Info")]
+    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private GameObject returnToLobbyButton;
+    [SerializeField] private GameObject guraWinsObject;
+    [SerializeField] private GameObject breadWinsObject;
+    [SerializeField] private List<GameObject> playerPanels;
+
+    //Cameras
+    [Header("Cameras")]
     [SerializeField] private CinemachineVirtualCamera[] cinemachineGuraCameras;
     [SerializeField] private CinemachineVirtualCamera[] cinemachineBreadCameras;
 

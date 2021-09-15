@@ -51,7 +51,10 @@ public class WMBNetworkManager : NetworkRoomManager
     {
         base.OnRoomStartServer();
 
-        players = new Dictionary<int, PlayerInfo>();
+        if (players == null)
+            players = new Dictionary<int, PlayerInfo>();
+        else
+            players.Clear();
     }
 
     //TODO: Sets at other spawn positions. Doesn't really fix the problem, but works for now.
