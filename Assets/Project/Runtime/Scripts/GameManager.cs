@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using Mirror;
 using System.Collections;
 using TMPro;
+using System;
 
 public class GameManager : NetworkBehaviour
 {
@@ -37,25 +38,68 @@ public class GameManager : NetworkBehaviour
     private AbilitySO abilityOne;
     private AbilitySO abilityTwo;
 
+    #region Event Stuff
+
+    public event Action<NetworkConnection> OnPlayerDied;
+    public void PlayerDied(NetworkConnection conn) => OnPlayerDied?.Invoke(conn);
+
+    #endregion
+
     private void Start()
     {
         gameTimer = gameLength;
         StartCoroutine(GameTimer());
     }
 
+    private void OnEnable()
+    {
+        OnPlayerDied += GameManager_OnPlayerDied;
+    }
+
+    private void OnDisable()
+    {
+        OnPlayerDied -= GameManager_OnPlayerDied;
+    }
+
+    private void GameManager_OnPlayerDied(NetworkConnection conn)
+    {
+        throw new NotImplementedException();
+    }
+
     void GameOver()
     {
-        Debug.Log("Game over!");
+        Time.timeScale = 0;
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
 
     #region UI
 
-    public void UISetup(AbilitySO abilityOne, AbilitySO abilityTwo)
+    //TODO: Setup UI portraits for each player?
+    public void AbilityUISetup(AbilitySO abilityOne, AbilitySO abilityTwo)
     {
+        if (!isLocalPlayer)
+            return;
+
         this.abilityOne = abilityOne;
         this.abilityTwo = abilityTwo;
         abilityOneImage.sprite = abilityOne.Icon;
         abilityTwoImage.sprite = abilityTwo.Icon;
+    }
+
+    private void PlayerUISetup()
+    {
+        if (!isLocalPlayer)
+            return;
+
+        foreach(PlayerInfo player in WMBNetworkManager.players.Values)
+        {
+            //Check if the player is Gura
+            if (player.CharacterChoice.Equals(0))
+                continue;
+
+
+        }
     }
 
     IEnumerator GameTimer()

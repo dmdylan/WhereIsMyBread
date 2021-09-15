@@ -15,6 +15,8 @@ namespace BreadStuff
         [SyncVar]
         [SerializeField] protected int health;
         [SerializeField] protected int maxHealth = 2;
+        [SyncVar(hook = nameof(PlayerDied))]
+        private bool isDead = false;
 
         //On hit
         [SerializeField] private BreadDamagedSO breadDamaged;
@@ -48,7 +50,7 @@ namespace BreadStuff
             breadMovementController = GetComponent<BreadMovementController>();
             health = maxHealth;
             baseMoveSpeed = breadMovementController.MoveSpeed;
-            GameManager.Instance.UISetup(abilityOneSO, abilityTwoSO);
+            GameManager.Instance.AbilityUISetup(abilityOneSO, abilityTwoSO);
             //TODO: Move this somewhere smart
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -57,10 +59,9 @@ namespace BreadStuff
 
         public virtual void Destroyed()
         {
+            isDead = true;
             //TODO: Disable current gameobject and input. Set camera follow to other players.
             //Be able to cycle through players for spectate.
-
-
 
             //TODO: Add possible 3rd camera for spectate mode.
             NetworkServer.Destroy(gameObject);
@@ -127,6 +128,11 @@ namespace BreadStuff
             }
 
             breadMovementController.MoveSpeed = baseMoveSpeed;
+        }
+
+        void PlayerDied(bool oldValue, bool newValue)
+        {
+            GameManager.Instance.PlayerDied(connectionToClient);
         }
     }
 }
