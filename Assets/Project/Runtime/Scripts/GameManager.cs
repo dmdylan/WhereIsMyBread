@@ -56,6 +56,7 @@ public class GameManager : NetworkBehaviour
 
     private AbilitySO abilityOne;
     private AbilitySO abilityTwo;
+    private Dictionary<int, bool> playerDeathStatus;
 
     #region Event Stuff
 
@@ -66,7 +67,9 @@ public class GameManager : NetworkBehaviour
 
     private void Start()
     {
+        playerDeathStatus = new Dictionary<int, bool>();
         gameTimer = gameLength;
+        PlayerSetup();
         StartCoroutine(GameTimer());
     }
 
@@ -82,7 +85,7 @@ public class GameManager : NetworkBehaviour
 
     private void GameManager_OnPlayerDied(NetworkConnection conn)
     {
-        throw new NotImplementedException();
+        playerDeathStatus[conn.connectionId] = true;
     }
 
     void GameOver()
@@ -90,6 +93,19 @@ public class GameManager : NetworkBehaviour
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
+        gameOverPanel.SetActive(true);
+    }
+
+    void PlayerSetup()
+    {
+        foreach(PlayerInfo playerInfo in WMBNetworkManager.players.Values)
+        {
+            //Don't need to add dead/alive if the player is gura
+            if (playerInfo.CharacterChoice.Equals(0))
+                continue;
+
+            playerDeathStatus[playerInfo.Conn.connectionId] = false;
+        }
     }
 
     #region UI
@@ -97,9 +113,6 @@ public class GameManager : NetworkBehaviour
     //TODO: Setup UI portraits for each player?
     public void AbilityUISetup(AbilitySO abilityOne, AbilitySO abilityTwo)
     {
-        if (!isLocalPlayer)
-            return;
-
         this.abilityOne = abilityOne;
         this.abilityTwo = abilityTwo;
         abilityOneImage.sprite = abilityOne.Icon;
@@ -108,9 +121,6 @@ public class GameManager : NetworkBehaviour
 
     private void PlayerUISetup()
     {
-        if (!isLocalPlayer)
-            return;
-
         foreach(PlayerInfo player in WMBNetworkManager.players.Values)
         {
             //Check if the player is Gura
@@ -119,6 +129,11 @@ public class GameManager : NetworkBehaviour
 
 
         }
+    }
+
+    private void GameOverUISetup()
+    {
+         
     }
 
     IEnumerator GameTimer()

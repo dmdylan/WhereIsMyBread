@@ -54144,11 +54144,21 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   gameLength: 10
+  gameTimerText: {fileID: 403493840}
   abilityOneImage: {fileID: 363955837}
   abilityTwoImage: {fileID: 630068540}
   abilityOneCDText: {fileID: 1036058171}
   abilityTwoCDText: {fileID: 1657770912}
-  gameTimerText: {fileID: 403493840}
+  gameOverPanel: {fileID: 1958966118}
+  returnToLobbyButton: {fileID: 1915844027}
+  guraWinsObject: {fileID: 943244683}
+  breadWinsObject: {fileID: 617076804}
+  playerPanels:
+  - {fileID: 291887624}
+  - {fileID: 1464994951}
+  - {fileID: 1155837084}
+  - {fileID: 1805457653}
+  - {fileID: 739836779}
   cinemachineGuraCameras:
   - {fileID: 4252088}
   - {fileID: 886856340}
