@@ -72,12 +72,14 @@ public struct PlayerInfo
     private NetworkConnection conn;
     private string playerName;
     private int characterChoice;
+    private bool isDead;
 
     public PlayerInfo(NetworkConnection conn, string playerName, int characterChoice)
     {
         this.conn = conn;
         this.playerName = playerName;
         this.characterChoice = characterChoice;
+        isDead = false;
     }
 
     public NetworkConnection Conn => conn;
@@ -92,6 +94,12 @@ public struct PlayerInfo
     {
         get => characterChoice;
         set => characterChoice = value;
+    }
+
+    public bool IsDead
+    {
+        get => isDead;
+        set => isDead = value;
     }
 }
 

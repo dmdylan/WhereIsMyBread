@@ -93,7 +93,6 @@ public class GameManager : NetworkBehaviour
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
-        gameOverPanel.SetActive(true);
     }
 
     void PlayerSetup()
@@ -131,9 +130,16 @@ public class GameManager : NetworkBehaviour
         }
     }
 
+    //TODO: Networkmanager playerinfo also tracks death status. Just update that from there and then 
+    //loop through those for info and whatnot
     private void GameOverUISetup()
     {
-         
+        gameOverPanel.SetActive(true);
+
+        for (int i = 0; i < WMBNetworkManager.players.Count; i++)
+        {
+            //playerPanels[i].GetComponent<TMP_Text>().text = WMBNetworkManager.players[].PlayerName;
+        }
     }
 
     IEnumerator GameTimer()
