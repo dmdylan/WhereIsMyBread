@@ -190,6 +190,9 @@ public class WMBRoomPlayer : NetworkRoomPlayer
     void PlayerNameChanged(string oldName, string newName)
     {
         OnPlayerNameChanged?.Invoke(newName);
+        PlayerInfo info = WMBNetworkManager.players[connectionToClient.connectionId];
+        info.PlayerName = newName;
+        WMBNetworkManager.players[connectionToClient.connectionId] = info;
     }
 
     void PlayerCharacterChanged(int oldCharacterNumber, int newCharacterNumber)
@@ -198,13 +201,4 @@ public class WMBRoomPlayer : NetworkRoomPlayer
     }
 
     #endregion
-
-    //#region Optional UI
-    //
-    //public override void OnGUI()
-    //{
-    //    base.OnGUI();
-    //}
-    //
-    //#endregion
 }

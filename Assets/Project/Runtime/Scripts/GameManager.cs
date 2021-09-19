@@ -48,6 +48,7 @@ public class GameManager : NetworkBehaviour
     [SerializeField] private GameObject guraWinsObject;
     [SerializeField] private GameObject breadWinsObject;
     [SerializeField] private List<GameObject> playerPanels;
+    [SerializeField] private List<GameObject> playerDeadText;
 
     //Cameras
     [Header("Cameras")]
@@ -56,7 +57,6 @@ public class GameManager : NetworkBehaviour
 
     private AbilitySO abilityOne;
     private AbilitySO abilityTwo;
-    private Dictionary<int, bool> playerDeathStatus;
 
     #region Event Stuff
 
@@ -67,9 +67,8 @@ public class GameManager : NetworkBehaviour
 
     private void Start()
     {
-        playerDeathStatus = new Dictionary<int, bool>();
         gameTimer = gameLength;
-        PlayerSetup();
+        //PlayerSetup();
         StartCoroutine(GameTimer());
     }
 
@@ -85,7 +84,9 @@ public class GameManager : NetworkBehaviour
 
     private void GameManager_OnPlayerDied(NetworkConnection conn)
     {
-        playerDeathStatus[conn.connectionId] = true;
+        PlayerInfo info = WMBNetworkManager.players[conn.connectionId];
+        info.IsDead = true;
+        WMBNetworkManager.players[conn.connectionId] = info;
     }
 
     void GameOver()
@@ -93,18 +94,7 @@ public class GameManager : NetworkBehaviour
         Time.timeScale = 0;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
-    }
-
-    void PlayerSetup()
-    {
-        foreach(PlayerInfo playerInfo in WMBNetworkManager.players.Values)
-        {
-            //Don't need to add dead/alive if the player is gura
-            if (playerInfo.CharacterChoice.Equals(0))
-                continue;
-
-            playerDeathStatus[playerInfo.Conn.connectionId] = false;
-        }
+        GameOverUISetup();
     }
 
     #region UI
@@ -118,27 +108,22 @@ public class GameManager : NetworkBehaviour
         abilityTwoImage.sprite = abilityTwo.Icon;
     }
 
-    private void PlayerUISetup()
-    {
-        foreach(PlayerInfo player in WMBNetworkManager.players.Values)
-        {
-            //Check if the player is Gura
-            if (player.CharacterChoice.Equals(0))
-                continue;
-
-
-        }
-    }
-
-    //TODO: Networkmanager playerinfo also tracks death status. Just update that from there and then 
-    //loop through those for info and whatnot
     private void GameOverUISetup()
     {
         gameOverPanel.SetActive(true);
+        int count = 0;
 
-        for (int i = 0; i < WMBNetworkManager.players.Count; i++)
+        foreach(PlayerInfo playerInfo in WMBNetworkManager.players.Values)
         {
-            //playerPanels[i].GetComponent<TMP_Text>().text = WMBNetworkManager.players[].PlayerName;
+            playerPanels[count].SetActive(true);
+            playerPanels[count].GetComponent<TMP_Text>().text = playerInfo.PlayerName;
+
+            if (playerInfo.IsDead)
+            {
+                playerDeadText[count].SetActive(true);
+            }
+
+            count++;
         }
     }
 
