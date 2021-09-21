@@ -24,7 +24,7 @@ public class GameManager : NetworkBehaviour
 
     //TODO: Might work as SO instead of syncvar.
     [SyncVar(hook = nameof(UpdateTimer))]
-    private int gameTimer;
+    private int gameTimer = 0;
 
     //Game Settings
     [Header("Game Settings")]
@@ -57,18 +57,29 @@ public class GameManager : NetworkBehaviour
 
     private AbilitySO abilityOne;
     private AbilitySO abilityTwo;
+    private int playerDeaths = 0;
+    private int maxPlayerDeaths = 0;
+
 
     #region Event Stuff
 
     public event Action<NetworkConnection> OnPlayerDied;
-    public void PlayerDied(NetworkConnection conn) => OnPlayerDied?.Invoke(conn);
+    public void PlayerDied(NetworkConnection conn, bool isDead) => OnPlayerDied?.Invoke(conn);
 
     #endregion
 
     private void Start()
     {
+        foreach(PlayerInfo player in WMBNetworkManager.players.Values)
+        {
+            if (player.CharacterChoice.Equals(0))
+                continue;
+
+            else
+                maxPlayerDeaths++;
+        }
+
         gameTimer = gameLength;
-        //PlayerSetup();
         StartCoroutine(GameTimer());
     }
 
@@ -87,6 +98,12 @@ public class GameManager : NetworkBehaviour
         PlayerInfo info = WMBNetworkManager.players[conn.connectionId];
         info.IsDead = true;
         WMBNetworkManager.players[conn.connectionId] = info;
+        playerDeaths++;
+
+        if(playerDeaths == maxPlayerDeaths)
+        {
+            GameOver();
+        }
     }
 
     void GameOver()

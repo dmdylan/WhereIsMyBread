@@ -15,8 +15,9 @@ namespace BreadStuff
         [SyncVar]
         [SerializeField] protected int health;
         [SerializeField] protected int maxHealth = 2;
+
         [SyncVar(hook = nameof(PlayerDied))]
-        private bool isDead = false;
+        [SerializeField] private bool isDead = false;
 
         //On hit
         [SerializeField] private BreadDamagedSO breadDamaged;
@@ -54,7 +55,6 @@ namespace BreadStuff
             //TODO: Move this somewhere smart
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-
         }
 
         public virtual void Destroyed()
@@ -132,7 +132,7 @@ namespace BreadStuff
 
         void PlayerDied(bool oldValue, bool newValue)
         {
-            GameManager.Instance.PlayerDied(connectionToClient);
+            GameManager.Instance.PlayerDied(connectionToClient, newValue);
         }
     }
 }
